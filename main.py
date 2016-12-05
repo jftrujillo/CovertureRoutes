@@ -23,7 +23,7 @@ inicio = raw_input("Defina la posicion de inicion, separando las posiciones con 
 fin = raw_input("Defina la posicion de fin, separando las posiciones con ',': ")
 matrizInicioFin = x.definirOrigenFin(inicio,fin,a)
 print(matrizInicioFin)
-wf = WaveFront(matrizInicioFin)
+wf = WaveFront(matrizInicioFin,filas,columnas)
 wf.aplyWaveFrontToMatrix()
 
 
