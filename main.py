@@ -27,3 +27,4 @@ wf = WaveFront(matrizInicioFin,filas,columnas)
 wf.aplyWaveFrontToMatrix()
 
 
+

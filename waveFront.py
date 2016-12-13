@@ -13,8 +13,8 @@ class WaveFront:
     counterNeigborgs = 0
     def __init__(self,matrix,rows,columns):
         self.matrix = matrix
-        self.rows = rows - 1
-        self.columns = columns - 1
+        self.rows = rows 
+        self.columns = columns 
     
     def isMatrixEmpty(self):
         for matrixRow in self.matrix:
@@ -25,7 +25,7 @@ class WaveFront:
         return False
     
     def aplyWaveFrontToMatrix(self):
-        while (self.isMatrixEmpty):
+        while (self.isMatrixEmpty()):
             for i in range(self.rows):
                 for j in range(self.columns):
                     if (self.boxHasANeighbour(i,j)):
@@ -35,15 +35,27 @@ class WaveFront:
     
 
     def boxHasANeighbour(self,i,j):
-        if(i > 0 and i < self.rows + 1 and j>0 and j<self.columns + 1  and self.matrix[i,j] != 3 and self.matrix[i,j] != 2):
-            if (self.matrix[i - 1,j] > 1 and self.matrix[i - 1,j] != 2):
-                return True
-            if (self.matrix[i,j +1] > 1 and self.matrix[i,j +1] != 2):
-                return True
-            if (self.matrix[i + 1,j] > 1 and self.matrix[i + 1,j] != 2):
-                return True
-            if (self.matrix[i,j - 1] > 1 and self.matrix[i,j - 1] != 2):
-                return True
+        if(i > 0 and i < self.rows + 1 and j>0 and j<self.columns - 1   and self.matrix[i,j] != 3 and self.matrix[i,j] != 2  and self.matrix[i,j] != -1):
+            try:
+                if (self.matrix[i - 1,j] > 1 and self.matrix[i - 1,j] != 2 and self.matrix[i - 1,j] != -1):
+                    return True
+            except:
+                pass
+            try:
+                if (self.matrix[i,j +1] > 1 and self.matrix[i,j +1] != 2 and self.matrix[i,j +1] != -1):
+                    return True
+            except:
+                pass
+            try:
+                if (self.matrix[i + 1,j] > 1 and self.matrix[i + 1,j] != 2 and self.matrix[i + 1,j] != -1):
+                    return True
+            except:
+                pass
+            try:
+                if (self.matrix[i,j - 1] > 1 and self.matrix[i,j - 1] != 2 and self.matrix[i,j - 1] != -1):
+                    return True
+            except:
+                pass
             return False
         else:
             return False
@@ -57,19 +69,24 @@ class WaveFront:
     
     def getSmalestNeigbor(self,i,j):
         minimunValue = 10000000
-        if (self.matrix[i - 1,j] < minimunValue and self.matrix[i - 1,j] != 0 and self.matrix[i - 1,j] != 2):
-            minimunValue = self.matrix[i - 1,j]
-        if (self.matrix[i,j +1] < minimunValue and self.matrix[i,j +1] != 0 and self.matrix[i,j +1] != 2):
-            minimunValue = self.matrix[i,j +1]
-        if (self.matrix[i + 1,j] < minimunValue and self.matrix[i + 1,j] != 0 and self.matrix[i + 1,j] != 2):
-            minimunValue = self.matrix[i + 1,j]
-        if (self.matrix[i,j - 1] < minimunValue and self.matrix[i,j - 1] != 0 and self.matrix[i,j - 1] != 2):
-            minimunValue = self.matrix[i,j - 1]
+        try:
+            if (self.matrix[i - 1,j] < minimunValue and self.matrix[i - 1,j] != 0 and self.matrix[i - 1,j] != 2 and self.matrix[i - 1,j] != -1):
+                minimunValue = self.matrix[i - 1,j]
+        except:
+            pass
+        try:
+            if (self.matrix[i,j +1] < minimunValue and self.matrix[i,j +1] != 0 and self.matrix[i,j +1] != 2 and self.matrix[i,j +1] != -1):
+                minimunValue = self.matrix[i,j +1]
+        except:
+            pass
+        try:
+            if (self.matrix[i + 1,j] < minimunValue and self.matrix[i + 1,j] != 0 and self.matrix[i + 1,j] != 2 and self.matrix[i + 1,j] != -1):
+                minimunValue = self.matrix[i + 1,j]
+        except:
+            pass
+        try:
+            if (self.matrix[i,j - 1] < minimunValue and self.matrix[i,j - 1] != 0 and self.matrix[i,j - 1] != 2 and self.matrix[i,j - 1] != -1):
+                minimunValue = self.matrix[i,j - 1]
+        except:
+            pass
         return minimunValue
-        
-
-
-
-
-
-    

@@ -17,6 +17,17 @@ class matricesVacias:
             element[-1] = -1
         a[0] = -1
         a[-1] = -1
+        a[4,5] = -1
+        a[5,5] = -1
+        a[6,5] = -1
+        a[7,5] = -1
+        a[4,6] = -1
+        a[5,6] = -1
+        a[6,6] = -1
+        a[7,6] = -1
+        a[2,3] = -1
+        a[2,4] = -1
+        a[2,5] = -1
         return a
     def definirOrigenFin(self,inicio,fin,matriz):
         inicioVector = inicio.split(",")
