@@ -2,6 +2,7 @@ import numpy as np
 from matricesVacias import matricesVacias
 from Util.graphic import Graphic
 from waveFront import WaveFront
+from DFS import DFS
 
 # Se definen las siguientes constantes para el manejo de matrices
 #     -9 =  obstaculo.
@@ -24,7 +25,11 @@ fin = raw_input("Defina la posicion de fin, separando las posiciones con ',': ")
 matrizInicioFin = x.definirOrigenFin(inicio,fin,a)
 print(matrizInicioFin)
 wf = WaveFront(matrizInicioFin,filas,columnas)
-wf.aplyWaveFrontToMatrix()
+matrizWithWaveFront = wf.aplyWaveFrontToMatrix()
+print(matrizWithWaveFront)
+df = DFS(matrizWithWaveFront,filas,columnas)
+df.getVectorN()
+
 
 
 

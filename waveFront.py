@@ -29,9 +29,10 @@ class WaveFront:
             for i in range(self.rows):
                 for j in range(self.columns):
                     if (self.boxHasANeighbour(i,j)):
-                        self.matrix[i,j] = self.getSmalestNeigbor(i,j) + 1 
-            print(self.matrix)   
+                        self.matrix[i,j] = self.getSmalestNeigbor(i,j) + 1   
         print("La Matrix esta llena")
+    
+        return self.matrix
     
 
     def boxHasANeighbour(self,i,j):

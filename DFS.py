@@ -4,7 +4,7 @@ import numpy as np
 #el algoritmo de ruta DFS. Los vectores se implementan de la sigujiente manera:
 #Vector n(i,j) vector de posibles posiciones (Se ignoran valores con -1)
 
-    class DFS:
+class DFS:
         matriz = 0
         n = [[0,0]]
         columns = 0
@@ -19,6 +19,9 @@ import numpy as np
         def getVectorN(self):
             for i in range(self.rows):
                 for j in range(self.columns):
-                    if (self.matriz(i,j) != -1):
+                    if (self.matriz[i,j] != -1):
                         self.n.insert(-1,[i,j])
-                        print(self.n)
+            
+            print(self.n)
+            self.n.remove([0,0])
+            print(self.n)
