@@ -25,3 +25,31 @@ class DFS:
             print(self.n)
             self.n.remove([0,0])
             print(self.n)
+            return self.n
+        
+        def getVectorA(self,i,j,n):
+            a =[[0,0]]
+            for element in n:
+                if(element == [i + 1,j]):
+                    a.insert(-1,[i + 1,j])
+                if(element == [i, j + 1]):
+                    a.insert(-1,[i, j + 1])
+                if (element == [i - 1,j]):
+                    a.insert(-1,[i - 1,j])
+                if (element == [i, j - 1]):
+                    a.insert(-1,[i, j - 1])
+            a.remove([0,0])
+            print(a)
+        
+
+        def findStartAndGoal(self):
+            a = [[0,0]]
+            for i in range(self.rows):
+                for j  in range(self.columns):
+                    if self.matriz[i,j] == 2:
+                        a.insert(0,[i,j])
+                    if self.matriz[i,j] == 3:
+                        a.insert(1,[i,j])
+            a.remove([0,0])
+            print(a)
+                        

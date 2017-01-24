@@ -28,7 +28,9 @@ wf = WaveFront(matrizInicioFin,filas,columnas)
 matrizWithWaveFront = wf.aplyWaveFrontToMatrix()
 print(matrizWithWaveFront)
 df = DFS(matrizWithWaveFront,filas,columnas)
-df.getVectorN()
+n = df.getVectorN()
+df.getVectorA(3,2,n)
+df.findStartAndGoal()
 
 
 
