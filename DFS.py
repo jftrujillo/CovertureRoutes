@@ -33,7 +33,7 @@ class DFS:
         def getVectorN(self):
             """
             Obtiene el vector N: El vector N son todas las posiciones que puede ocupar el robot.
-            @param self: se llama a si misma para poder trabajar 
+            Solo se llama una sola vez 
             """
 
 
@@ -45,7 +45,7 @@ class DFS:
             print(self.n)
             self.n.remove([0,0])
             print(self.n)
-            return self.n
+            
         
         def getVectorA(self,i,j,n):
             """
@@ -57,7 +57,7 @@ class DFS:
             """
             a =[[0,0]]
             for element in n:
-                if(element == [i + 1,j]):
+                if(element == [i + 1,j])gst:
                     a.insert(-1,[i + 1,j])
                 if(element == [i, j + 1]):
                     a.insert(-1,[i, j + 1])
@@ -71,7 +71,8 @@ class DFS:
                     a.remove(visited)
                 except:
                     pass
-            print(a)
+            return a
+
         
         def addVisitedPosition(self,visited):
             """
@@ -91,8 +92,7 @@ class DFS:
             Agrega una nueva semilla. Es decir un lugar donde se ha hecho una desicion
             @param seed: La dupla de valores donde la posicion es una semilla
             """
-            self.s.insert(seed)
-        
+            self.s.insert(-1,seed)        
         def getGetVectorS(self):
             """
             Retorna el vectot de semillas
@@ -123,15 +123,17 @@ class DFS:
             
         
         def getCoverRoute(self):
-            currentPosition = self.findStartAndGoal[1]
-            print(currentPosition)
-            if(len(self.getVectorA(currentPosition)) > 1):
+            currentPosition = self.findStartAndGoal()[0]
+            print(currentPosition[0])
+            print(currentPosition[1])
+            self.getVectorN()
+            if(len(self.getVectorA(currentPosition[0],currentPosition[1],self.n)) > 1):
                 #Es una semilla
                 self.addNewSeed(currentPosition)
             else:
                 #no es una semilla
                 pass
-            nextPosition = self.getVectorA(currentPosition)[0]
+            nextPosition = self.getVectorA(currentPosition[0],currentPosition[1],self.n)[0]
             print (nextPosition)
             
             
