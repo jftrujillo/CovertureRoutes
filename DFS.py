@@ -18,7 +18,6 @@ class DFS:
         n = [[0,0]]
         v = [[0,0]]
         s = [[0,0]]
-        currentPosition = [0,0]
         columns = 0
         rows = 0
 
@@ -41,10 +40,7 @@ class DFS:
                 for j in range(self.columns):
                     if (self.matriz[i,j] != -1):
                         self.n.insert(-1,[i,j])
-            
-            print(self.n)
             self.n.remove([0,0])
-            print(self.n)
             
         
         def getVectorA(self,i,j,n):
@@ -57,20 +53,36 @@ class DFS:
             """
             a =[[0,0]]
             for element in n:
-                if(element == [i + 1,j])gst:
-                    a.insert(-1,[i + 1,j])
-                if(element == [i, j + 1]):
-                    a.insert(-1,[i, j + 1])
-                if (element == [i - 1,j]):
-                    a.insert(-1,[i - 1,j])
-                if (element == [i, j - 1]):
-                    a.insert(-1,[i, j - 1])            
+                if(element == [i,j - 1]):
+                    a.insert(-1,[i ,j - 1])
+                if(element == [i - 1, j]):
+                    a.insert(-1,[i -1, j])
+                if (element == [i , j + 1]):
+                    a.insert(-1,[i,j + 1])
+                if (element == [i +1, j]):
+                    a.insert(-1,[i +1 ,j])            
             a.remove([0,0])
             for visited in self.v:
                 try:
                     a.remove(visited)
                 except:
                     pass
+            maximunValue = 0
+            countOfSeed = 0
+            for element in a:
+                if self.matriz[element[0]][element[1]] > maximunValue:
+                    maximunValue = self.matriz[element[0]][element[1]]
+                    countOfSeed = 1
+                elif self.matriz[element[0]][element[1]] == maximunValue:
+                    countOfSeed = countOfSeed + 1
+            
+            removeElement = [[0,0]]
+            for elementA in a:
+                if self.matriz[elementA[0]][elementA[1]] < maximunValue:
+                    removeElement.insert(-1,elementA)
+            removeElement.remove([0,0])
+            for element in removeElement:
+                a.remove(element)                    
             return a
 
         
@@ -84,7 +96,7 @@ class DFS:
             for element in self.v:
                 if (element == visited):
                     return
-            self.v.insert(visited)
+            self.v.insert(-1,visited)
         
         
         def addNewSeed(self, seed):
@@ -119,22 +131,42 @@ class DFS:
                         a.insert(1,[i,j])
             a.remove([0,0])
             return a
-            print(a)
+        
+
+        def getNextPosition(self,a):
+            """
+            Esta funcion retorna la siguiente posicion dandole un vector de adyacencia. Esto es para asegurar
+            que se cumpla la prioridad anti horaria.
+            @param a: Vector adyacencia.
+            """
+            if len(a) > 1:
+                nextPosition = [10000000,10000000]
+                for position in a:
+                    if position[1] < nextPosition[1]:
+                        nextPosition = position
+                    elif position[1] == nextPosition[1]:
+                        if (position[0] < nextPosition[0]):
+                            nextPosition = position
+                return nextPosition
+            else:
+                return a[0]
             
         
         def getCoverRoute(self):
             currentPosition = self.findStartAndGoal()[0]
-            print(currentPosition[0])
-            print(currentPosition[1])
             self.getVectorN()
-            if(len(self.getVectorA(currentPosition[0],currentPosition[1],self.n)) > 1):
-                #Es una semilla
-                self.addNewSeed(currentPosition)
-            else:
-                #no es una semilla
-                pass
-            nextPosition = self.getVectorA(currentPosition[0],currentPosition[1],self.n)[0]
-            print (nextPosition)
+            for x in range(15):
+                if(len(self.getVectorA(currentPosition[0],currentPosition[1],self.n)) > 1):
+                    #Es una semilla
+                    self.addNewSeed(currentPosition)
+                else:
+                    #no es una semilla
+                    pass
+                vectorA = self.getVectorA(currentPosition[0],currentPosition[1],self.n)
+                nextPosition = self.getNextPosition(vectorA)
+                self.addVisitedPosition(currentPosition)
+                print(nextPosition)
+                currentPosition = nextPosition
             
             
 
