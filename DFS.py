@@ -53,14 +53,14 @@ class DFS:
             """
             a =[[0,0]]
             for element in n:
-                if(element == [i,j - 1]):
-                    a.insert(-1,[i ,j - 1])
-                if(element == [i - 1, j]):
-                    a.insert(-1,[i -1, j])
-                if (element == [i , j + 1]):
-                    a.insert(-1,[i,j + 1])
-                if (element == [i +1, j]):
-                    a.insert(-1,[i +1 ,j])            
+                if(element == [i -1,j]):
+                    a.insert(-1,[i - 1 ,j])
+                if(element == [i , j - 1]):
+                    a.insert(-1,[i, j - 1])
+                if (element == [i + 1 , j]):
+                    a.insert(-1,[i + 1,j])
+                if (element == [i, j + 1]):
+                    a.insert(-1,[i,j + 1])            
             a.remove([0,0])
             for visited in self.v:
                 try:
@@ -78,11 +78,16 @@ class DFS:
             
             removeElement = [[0,0]]
             for elementA in a:
+                prueba = self.matriz[elementA[0]][elementA[1]]
                 if self.matriz[elementA[0]][elementA[1]] < maximunValue:
                     removeElement.insert(-1,elementA)
             removeElement.remove([0,0])
             for element in removeElement:
-                a.remove(element)                    
+                a.remove(element)
+            try:
+                a.remove(self.findStartAndGoal()[1])
+            except:
+                pass            
             return a
 
         
@@ -133,21 +138,25 @@ class DFS:
             return a
         
 
-        def getNextPosition(self,a):
+        def getNextPosition(self,a,currentPosition):
             """
             Esta funcion retorna la siguiente posicion dandole un vector de adyacencia. Esto es para asegurar
             que se cumpla la prioridad anti horaria.
             @param a: Vector adyacencia.
             """
             if len(a) > 1:
-                nextPosition = [10000000,10000000]
                 for position in a:
-                    if position[1] < nextPosition[1]:
-                        nextPosition = position
-                    elif position[1] == nextPosition[1]:
-                        if (position[0] < nextPosition[0]):
-                            nextPosition = position
-                return nextPosition
+                    if (position[0] == (currentPosition[0] -1)):
+                        return position
+                for position in a:
+                    if (position[1] == (currentPosition[1] -1)):
+                        return position
+                for position in a:
+                    if (position[0] == (currentPosition[0] + 1)):
+                        return position
+                for position in a:
+                    if (position[1] == (currentPosition[1] + 1)):
+                        return position                
             else:
                 return a[0]
             
@@ -155,15 +164,17 @@ class DFS:
         def getCoverRoute(self):
             currentPosition = self.findStartAndGoal()[0]
             self.getVectorN()
-            for x in range(15):
+            while len(self.v) != len(self.n):
                 if(len(self.getVectorA(currentPosition[0],currentPosition[1],self.n)) > 1):
                     #Es una semilla
                     self.addNewSeed(currentPosition)
-                else:
+                elif (len(self.getVectorA(currentPosition[0],currentPosition[1],self.n) == 0):
+                    
+                elif:
                     #no es una semilla
                     pass
                 vectorA = self.getVectorA(currentPosition[0],currentPosition[1],self.n)
-                nextPosition = self.getNextPosition(vectorA)
+                nextPosition = self.getNextPosition(vectorA,currentPosition)
                 self.addVisitedPosition(currentPosition)
                 print(nextPosition)
                 currentPosition = nextPosition
