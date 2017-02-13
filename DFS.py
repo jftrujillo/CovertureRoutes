@@ -42,8 +42,30 @@ class DFS:
                         self.n.insert(-1,[i,j])
             self.n.remove([0,0])
             
-        
-        def getVectorA(self,i,j,n):
+        def isCurrenPositionSeed(self,i,j):
+            a =[[0,0]]
+            for element in self.n:
+                if(element == [i -1,j]):
+                    a.insert(-1,[i - 1 ,j])
+                if(element == [i , j - 1]):
+                    a.insert(-1,[i, j - 1])
+                if (element == [i + 1 , j]):
+                    a.insert(-1,[i + 1,j])
+                if (element == [i, j + 1]):
+                    a.insert(-1,[i,j + 1])            
+            a.remove([0,0])
+            for visited in self.v:
+                try:
+                    a.remove(visited)
+                except:
+                    pass
+            if(len(a)>1):
+                return True
+            else:
+                return  False
+
+
+        def getVectorA(self,i,j):
             """
             Obtiene el vector A: El vector A se denomina vector Adyacencia, es decir, las posiciones a las cuales
             se puede mover el robot. Aqui se tiene en cuenta el vector de lugares ya visitados.
@@ -52,7 +74,7 @@ class DFS:
             @return a: Vector adyecencia.
             """
             a =[[0,0]]
-            for element in n:
+            for element in self.n:
                 if(element == [i -1,j]):
                     a.insert(-1,[i - 1 ,j])
                 if(element == [i , j - 1]):
@@ -72,10 +94,7 @@ class DFS:
             for element in a:
                 if self.matriz[element[0]][element[1]] > maximunValue:
                     maximunValue = self.matriz[element[0]][element[1]]
-                    countOfSeed = 1
-                elif self.matriz[element[0]][element[1]] == maximunValue:
-                    countOfSeed = countOfSeed + 1
-            
+    
             removeElement = [[0,0]]
             for elementA in a:
                 prueba = self.matriz[elementA[0]][elementA[1]]
@@ -121,10 +140,11 @@ class DFS:
             Eliminar la ultima semilla en el vector. Esto se hace a medidac que vamos hacia atras en caso de no tener mas 
             posiciones que vistar.
             """
-            del self.s[-1]
-        
-
-        
+            try:
+                del self.s[-1]
+            except:
+                pass
+            
 
         def findStartAndGoal(self):
             a = [[0,0]]
@@ -164,20 +184,30 @@ class DFS:
         def getCoverRoute(self):
             currentPosition = self.findStartAndGoal()[0]
             self.getVectorN()
-            while len(self.v) != len(self.n):
-                if(len(self.getVectorA(currentPosition[0],currentPosition[1],self.n)) > 1):
+            while (len(self.v) < (len(self.n) -1)):
+                self.addVisitedPosition(currentPosition)
+                if(self.isCurrenPositionSeed(currentPosition[0],currentPosition[1])):
                     #Es una semilla
                     self.addNewSeed(currentPosition)
-                elif (len(self.getVectorA(currentPosition[0],currentPosition[1],self.n) == 0):
-                    
-                elif:
+                    vectorA = self.getVectorA(currentPosition[0],currentPosition[1])
+                    nextPosition = self.getNextPosition(vectorA,currentPosition)
+                    print(nextPosition)
+                    currentPosition = nextPosition                    
+                
+                else:
                     #no es una semilla
-                    pass
-                vectorA = self.getVectorA(currentPosition[0],currentPosition[1],self.n)
-                nextPosition = self.getNextPosition(vectorA,currentPosition)
-                self.addVisitedPosition(currentPosition)
-                print(nextPosition)
-                currentPosition = nextPosition
+                    if (len(self.getVectorA(currentPosition[0],currentPosition[1])) == 0):
+                        try:
+                            currentPosition = self.getGetVectorS()[-1]
+                        except:
+                            pass
+                        self.removeSeedInS()
+
+                    else:
+                        vectorA = self.getVectorA(currentPosition[0],currentPosition[1])
+                        currentPosition = self.getNextPosition(vectorA,currentPosition)
+                        print(currentPosition)
+            print("Ruta encontrada")
             
             
 
