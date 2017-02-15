@@ -183,6 +183,7 @@ class DFS:
         
         def getCoverRoute(self):
             currentPosition = self.findStartAndGoal()[0]
+            covertura =  [[0,0]]
             self.getVectorN()
             while (len(self.v) < (len(self.n))):
                 self.addVisitedPosition(currentPosition)
@@ -192,7 +193,9 @@ class DFS:
                     vectorA = self.getVectorA(currentPosition[0],currentPosition[1])
                     nextPosition = self.getNextPosition(vectorA,currentPosition)
                     print(nextPosition)
+                    covertura.insert(-1,nextPosition)
                     currentPosition = nextPosition                    
+
                 
                 else:
                     #no es una semilla
@@ -207,8 +210,13 @@ class DFS:
                         vectorA = self.getVectorA(currentPosition[0],currentPosition[1])
                         currentPosition = self.getNextPosition(vectorA,currentPosition)
                         print(currentPosition)
-            print()
+                        covertura.insert(-1,currentPosition)
+            print(self.findStartAndGoal()[1])
+            covertura.insert(-1,self.findStartAndGoal()[1])
+            covertura.remove([0,0])
             print("Ruta encontrada")
+            return covertura
+            
             
             
 

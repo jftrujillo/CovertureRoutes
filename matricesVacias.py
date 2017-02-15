@@ -18,10 +18,29 @@ class matricesVacias:
         a[0] = -1
         a[-1] = -1
         a[2,2] = -1    
+        a[2,3] = -1
+        a[2,4] = -1
+        a[3,2] = -1
+        a[3,3] = -1
+        a[3,4] = -1
+        
+        a[6,6] = -1 
+        a[7,6] = -1 
+        a[8,6] = -1 
+        a[9,7] = -1
+        a[8,7] = -1
+        a[8,8] = -1
+        a[7,8] = -1
+        
+
+        
+
+
+
         return a
     def definirOrigenFin(self,inicio,fin,matriz):
         inicioVector = inicio.split(",")
         finVector = fin.split(",")
-        matriz[int(inicio[0]),int(inicio[2])] = 2
-        matriz[int(fin[0]),int(fin[2])] = 3
+        matriz[int(inicioVector[0]),int(inicioVector[1])] = 2
+        matriz[int(finVector[0]),int(finVector[1])] = 3
         return matriz

@@ -3,6 +3,7 @@ from matricesVacias import matricesVacias
 from Util.graphic import Graphic
 from waveFront import WaveFront
 from DFS import DFS
+from Graphics import Graphics
 
 # Se definen las siguientes constantes para el manejo de matrices
 #     -9 =  obstaculo.
@@ -19,6 +20,7 @@ columnas = int(raw_input('ingrese numero de columnas: '))
 filas = int(raw_input("ingerese filas: "))
 x = matricesVacias(columnas,filas)
 a = x.matrizConObstaculos()
+b = x.matrizConObstaculos()
 print(a)
 inicio = raw_input("Defina la posicion de inicion, separando las posiciones con ',': ")
 fin = raw_input("Defina la posicion de fin, separando las posiciones con ',': ")
@@ -28,7 +30,11 @@ wf = WaveFront(matrizInicioFin,filas,columnas)
 matrizWithWaveFront = wf.aplyWaveFrontToMatrix()
 print(matrizWithWaveFront)
 df = DFS(matrizWithWaveFront,filas,columnas)
-df.getCoverRoute()
+covertura = df.getCoverRoute()
+print("----------------------------------------")
+grap = Graphics(matrizWithWaveFront)
+grap.printCoverturaWithWavefront(covertura)
+
 
 
 
