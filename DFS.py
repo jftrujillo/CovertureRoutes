@@ -128,11 +128,15 @@ class DFS:
             Agrega una nueva semilla. Es decir un lugar donde se ha hecho una desicion
             @param seed: La dupla de valores donde la posicion es una semilla
             """
-            self.s.insert(-1,seed)        
+            self.s.append(seed)        
         def getGetVectorS(self):
             """
             Retorna el vectot de semillas
             """
+            try:
+                self.s.remove([0,0])
+            except:
+                pass
             return self.s
         
         def removeSeedInS(self):
@@ -216,6 +220,58 @@ class DFS:
             covertura.remove([0,0])
             print("Ruta encontrada")
             return covertura
+
+        def getCoverRouteWitSeed(self):
+            currentPosition = self.findStartAndGoal()[0]
+            parentVector = [[0,0]]
+            covertura =  [[0,0]]
+            self.getVectorN()
+            while (len(self.v) < (len(self.n) - 1)):
+                self.addVisitedPosition(currentPosition)
+                parentVector.append(currentPosition)
+                if(self.isCurrenPositionSeed(currentPosition[0],currentPosition[1])):
+                    #Es una semilla
+                    self.addNewSeed(currentPosition)
+                    vectorA = self.getVectorA(currentPosition[0],currentPosition[1])
+                    nextPosition = self.getNextPosition(vectorA,currentPosition)
+                    print(nextPosition)
+                    covertura.insert(-1,nextPosition)
+                    currentPosition = nextPosition                    
+
+                
+                else:
+                    #no es una semilla
+                    if (len(self.getVectorA(currentPosition[0],currentPosition[1])) == 0):
+                        try:
+                            try:
+                                parentVector.remove([0,0])                   
+                            except:
+                                pass
+                            removeElement = [[0,0]]
+                            for element in reversed(parentVector):
+                                if (not(element == [0,0])):
+                                    print(element)
+                                    removeElement.append(element)
+                                    covertura.insert(-1,element)
+                                    if element == self.getGetVectorS()[-1]: 
+                                        currentPosition = self.getGetVectorS()[-1]
+                                        break
+                        except:
+                            pass
+                        self.removeSeedInS()
+                        removeElement.remove([0,0])
+                        for element in removeElement:
+                            parentVector.remove(element)
+                    else:
+                        vectorA = self.getVectorA(currentPosition[0],currentPosition[1])
+                        currentPosition = self.getNextPosition(vectorA,currentPosition)
+                        print(currentPosition)
+                        covertura.insert(-1,currentPosition)
+            print(self.findStartAndGoal()[1])
+            covertura.insert(-1,self.findStartAndGoal()[1])
+            
+            print("Ruta encontrada")
+            return filter(lambda a: a != 0 , covertura)
             
             
             

@@ -18,12 +18,13 @@ class Graphics:
                 time.sleep(1)
             else:
                 pass
+    
     def printCoverturaWithWavefront(self,covertura):
         for element in covertura:
             if (not(self.matriz[element[0]][element[1]] == 2 or self.matriz[element[0]][element[1]] == 3)):
                 self.matriz[element[0]][element[1]] = 1
                 print(self.matriz)
-                time.sleep(1)
+                time.sleep(0.5)
             else:
                 pass
 

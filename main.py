@@ -30,10 +30,10 @@ wf = WaveFront(matrizInicioFin,filas,columnas)
 matrizWithWaveFront = wf.aplyWaveFrontToMatrix()
 print(matrizWithWaveFront)
 df = DFS(matrizWithWaveFront,filas,columnas)
-covertura = df.getCoverRoute()
+covertura = df.getCoverRouteWitSeed()
 print("----------------------------------------")
-grap = Graphics(matrizWithWaveFront)
-grap.printCoverturaWithWavefront(covertura)
+grap = Graphics(b)
+grap.printCovertura(covertura)
 
 
 
