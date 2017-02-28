@@ -1,4 +1,5 @@
 import numpy as np
+import csv
 from matricesVacias import matricesVacias
 from Util.graphic import Graphic
 from waveFront import WaveFront
@@ -36,6 +37,10 @@ grap = Graphics(b)
 grap.printCovertura(covertura)
 grap.counter()
 grap.numberOfTwist(covertura)
+np.savetxt("covertura.txt",covertura,delimiter=',')
+with open("covertura.txt", "wb") as f:
+    writer = csv.writer(f)
+    writer.writerows(covertura)
 
 
 
