@@ -269,7 +269,7 @@ class DFS:
                         covertura.insert(-1,currentPosition)
             print(self.findStartAndGoal()[1])
             covertura.insert(-1,self.findStartAndGoal()[1])
-            
+            covertura.remove([0,0])
             print("Ruta encontrada")
             return filter(lambda a: a != 0 , covertura)
             

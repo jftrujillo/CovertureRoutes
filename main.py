@@ -34,6 +34,8 @@ covertura = df.getCoverRouteWitSeed()
 print("----------------------------------------")
 grap = Graphics(b)
 grap.printCovertura(covertura)
+grap.counter()
+grap.numberOfTwist(covertura)
 
 
 
