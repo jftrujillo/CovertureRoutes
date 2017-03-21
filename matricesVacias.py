@@ -31,16 +31,25 @@ class matricesVacias:
         a[8,7] = -1
         a[8,8] = -1
         a[7,8] = -1
-        
-
-        
-
-
-
         return a
+
+    def matrizForStc(self):
+        a = np.zeros((self.columns,self.filas))
+        a[2,2] = -1    
+        a[2,3] = -1
+        a[6,6] = -1 
+        a[7,8] = -1
+        return a
+
+
     def definirOrigenFin(self,inicio,fin,matriz):
         inicioVector = inicio.split(",")
         finVector = fin.split(",")
         matriz[int(inicioVector[0]),int(inicioVector[1])] = 2
         matriz[int(finVector[0]),int(finVector[1])] = 3
+        return matriz
+    
+    def defineOrigin(self,inicio,matriz):
+        inicioVector = inicio.split(",")
+        matriz[int(inicioVector[0]),int(inicioVector[1])] = 2
         return matriz
