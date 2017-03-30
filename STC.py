@@ -6,7 +6,7 @@ class STC:
     matriz1x1 = 0
     vectorS = []
     vectorN = []
-    vectorV = [0,0]
+    vectorV = []
     nodes = []
     initial1x1 = 0
     initial4x4 = 0
@@ -23,35 +23,6 @@ class STC:
     def __init__(self,matriz4x4):
         self.matriz4x4 = matriz4x4
         self.matriz1x1 = self.getMatriz1x1(matriz4x4)
-
-    def getSTCovertureFake(self):
-        self.getInitialPosition()
-        self.currentPosition = self.initial4x4
-        self.currentNode = self.initial1x1
-        lastNode = 0
-        self.setVectorN()
-        vectorS = []
-        parentNode = None
-        while((len(self.vectorV)) < (len(self.vectorN) - 1)):
-            nextNode = self.getNewNodeArround(self.currentPosition,parentNode)
-            for (node,cells) in self.nodes:
-                if node == nextNode:
-                    while self.nextPosition1x1(self.currentPosition,cells) == None:
-                        ##Debo movel currentPosition
-                        nextPosition = self.searchForNextBorder(self.currentPosition,self.currentNode,parentNode)
-                        print (nextPosition)
-                        self.currentPosition = nextPosition
-                        self.matriz4x4[self.currentPosition[0],self.currentPosition[1]] = 1
-
-                    nextPosition = self.nextPosition1x1(self.currentPosition,cells)
-                    self.currentPosition = nextPosition
-                    self.matriz4x4[self.currentPosition[0],self.currentPosition[1]] = 1
-                    lastNode = self.currentNode
-                    self.checkStateOfNode(lastNode)
-                    parentNode = self.currentNode
-                    self.currentNode = nextNode
-                    print(self.currentPosition)
-                    break
     
     def getSTCoverture(self):
         self.getInitialPosition()
@@ -60,18 +31,29 @@ class STC:
         parentNode = None
         self.setVectorN()
         vectorS = []
+        covertura = []
+
         while (len(self.vectorV) < (len(self.vectorN))):
             positionNode = self.getNewNodeArround(self.currentPosition,self.currentNode,parentNode)
+            print(self.matriz4x4)
             while positionNode == None:
                 nextPosition = self.searchForNextBorder(self.currentPosition,self.currentNode,parentNode)
                 if nextPosition != None:
                     print(nextPosition)
+                    print(self.matriz4x4)
+                    self.vectorV.append(nextPosition)
+                    covertura.append(nextPosition)
                     self.currentPosition = nextPosition
                     self.matriz4x4[self.currentPosition[0],self.currentPosition[1]] = 1
                     positionNode = self.getNewNodeArround(self.currentPosition,self.currentNode,parentNode)
                 else:
-                    positionNode = self.getNewNodeArroundPartialVisited(self.currentPosition,self.currentNode,parentNode)
+                    positionNode = self.getNewNodeArroundPartialVisited(self.currentPosition,self.currentNode,vectorS)
                     self.checkStateOfNode(self.currentNode)
+                    vectorS.append(self.currentNode)
+                    print(self.matriz4x4)
+                    if (self.areAllNodesVisited()):
+                        print('termino')
+                        return covertura
 
             
             self.currentPosition = positionNode[0]
@@ -81,11 +63,19 @@ class STC:
             vectorS.append(self.currentNode)
             self.currentNode = positionNode[1]
             print(self.currentPosition)
-                
+            print(self.matriz4x4)
+            covertura.append(self.currentPosition)
+            self.vectorV.append(self.currentPosition)
+        return covertura
                 
     
 
-
+    def areAllNodesVisited(self):
+        for row in self.matriz1x1:
+            for element in row:
+                if element == 0 or element == 1:
+                    return False
+        return True
     
     def getNewNodeArround(self,currentPosition4x4,currentNode,parentNode):
         posibleNextPosition = []
@@ -96,22 +86,21 @@ class STC:
         for position in posibleNextPosition:
             for (node,cells) in self.nodes:
                 if(position in cells and node != currentNode and self.matriz1x1[node[0],node[1]] == 0):
-                    print(self.matriz1x1)
                     return [position,node]
         return None
     
-    def getNewNodeArroundPartialVisited(self,currentPosition4x4,currentNode,parentNode):
+    def getNewNodeArroundPartialVisited(self,currentPosition4x4,currentNode,vectorS):
         posibleNextPosition = []
         posibleNextPosition.append((currentPosition4x4[0] - 1,currentPosition4x4[1]))
         posibleNextPosition.append((currentPosition4x4[0],currentPosition4x4[1] - 1))
         posibleNextPosition.append((currentPosition4x4[0] + 1,currentPosition4x4[1]))
         posibleNextPosition.append((currentPosition4x4[0],currentPosition4x4[1] + 1))
-        for position in posibleNextPosition:
-            for (node,cells) in self.nodes:
-                if(position in cells and node != currentNode and self.matriz1x1[node[0],node[1]] == 1):
-                    print(self.matriz1x1)
-                    return [position,node]
-        return None    
+        for element in reversed(vectorS):
+            for position in posibleNextPosition:
+                for (node,cells) in self.nodes:
+                    if(position in cells and node != currentNode and self.matriz1x1[node[0],node[1]] == 1 and node == element):
+                        return [position,node]
+        return None
 
 
     def searchForNextBorder(self,currentPosition,currentNode,parentNode):
@@ -154,7 +143,7 @@ class STC:
                 for element in posibleFuturePosition:
                     if (element in cells and self.matriz4x4[element[0],element[1]] == 0):
                         return element
-
+        return None
 
 
 
@@ -189,7 +178,7 @@ class STC:
 
 
     def setVectorN(self):
-        for (x,y), element in np.ndenumerate(self.matriz1x1):
+        for (x,y), element in np.ndenumerate(self.matriz4x4):
             if(element != -1 and element != 2):
                 self.vectorN.append((x,y))
     
