@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class DFS:
+class DFS8:
         """
         #Clase para la obtencion de vectores y condiciones necesarias para la implementaciond de 
         #el algoritmo de ruta DFS. Los vectores se implementan de la sigujiente manera:
@@ -14,7 +14,7 @@ class DFS:
         #VectorR ruta(i,j) guarda toda la ruta. Este es el resultado es decir la ruta.
         Se recorre en contra de las manecillas del reloj.
         """
-        matriz = 0
+        matriz = []
         n = []
         v = []
         s = []
@@ -27,6 +27,9 @@ class DFS:
             self.matriz = matriz
             self.columns = colums
             self.rows = rows
+            self.n = []
+            self.v = []
+            self.s = []
         
         
         def getVectorN(self):
@@ -34,22 +37,34 @@ class DFS:
             Obtiene el vector N: El vector N son todas las posiciones que puede ocupar el robot.
             Solo se llama una sola vez 
             """
+
+
             for i in range(self.rows):
                 for j in range(self.columns):
                     if (self.matriz[i,j] != -1):
                         self.n.append([i,j])
+        
             
         def isCurrenPositionSeed(self,i,j):
             a =[]
             for element in self.n:
                 if(element == [i -1,j]):
                     a.append([i - 1 ,j])
+                if(element == [i -1,j - 1]):
+                    a.append([i - 1 ,j - 1])
                 if(element == [i , j - 1]):
                     a.append([i, j - 1])
+                if(element == [i + 1, j - 1]):
+                    a.append([i + 1, j - 1])
                 if (element == [i + 1 , j]):
                     a.append([i + 1,j])
+                if (element == [i + 1 , j + 1]):
+                    a.append([i + 1,j + 1])
                 if (element == [i, j + 1]):
                     a.append([i,j + 1])            
+                if (element == [i - 1, j + 1]):
+                    a.append([i - 1,j + 1])            
+
             for visited in self.v:
                 try:
                     a.remove(visited)
@@ -73,12 +88,21 @@ class DFS:
             for element in self.n:
                 if(element == [i -1,j]):
                     a.append([i - 1 ,j])
+                if(element == [i -1,j - 1]):
+                    a.append([i - 1 ,j - 1])
                 if(element == [i , j - 1]):
                     a.append([i, j - 1])
+                if(element == [i + 1, j - 1]):
+                    a.append([i + 1, j - 1])
                 if (element == [i + 1 , j]):
                     a.append([i + 1,j])
+                if (element == [i + 1 , j + 1]):
+                    a.append([i + 1,j + 1])
                 if (element == [i, j + 1]):
                     a.append([i,j + 1])            
+                if (element == [i - 1, j + 1]):
+                    a.append([i - 1,j + 1])            
+        
             for visited in self.v:
                 try:
                     a.remove(visited)
@@ -144,9 +168,9 @@ class DFS:
             a = []
             for i in range(self.rows):
                 for j  in range(self.columns):
-                    if self.matriz[i,j] == 2:
+                    if self.matriz[i,j] == 1:
                         a.insert(0,[i,j])
-                    if self.matriz[i,j] == 3:
+                    if self.matriz[i,j] == 2:
                         a.insert(1,[i,j])
             return a
         
@@ -159,55 +183,34 @@ class DFS:
             """
             if len(a) > 1:
                 for position in a:
-                    if (position[0] == (currentPosition[0] -1)):
+                    if (position[0] == (currentPosition[0] - 1) and position[1] == currentPosition[1]):
                         return position
                 for position in a:
-                    if (position[1] == (currentPosition[1] -1)):
+                    if (position[0] == (currentPosition[0] - 1) and position[1] == currentPosition[1] - 1):
                         return position
                 for position in a:
-                    if (position[0] == (currentPosition[0] + 1)):
+                    if (position[0] == currentPosition[0] and position[1] == currentPosition[1] - 1):
+                        return position
+                
+                for position in a:
+                    if (position[0] == (currentPosition[0] + 1) and position[1] == currentPosition[1] - 1):
                         return position
                 for position in a:
-                    if (position[1] == (currentPosition[1] + 1)):
-                        return position                
+                    if (position[0] == currentPosition[0] + 1 and position[1] == currentPosition[1]):
+                        return position
+                for position in a:
+                    if (position[0] == currentPosition[0] + 1 and position[1] == currentPosition[1] + 1):
+                        return position
+                for position in a:
+                    if (position[0] == currentPosition[0] and position[1] == currentPosition[1] + 1):
+                        return position
+                for position in a:
+                    if (position[0] == currentPosition[0] - 1 and position[1] == currentPosition[1] + 1):
+                        return position
             else:
                 return a[0]
             
         
-        def getCoverRoute(self):
-            currentPosition = self.findStartAndGoal()[0]
-            covertura =  []
-            self.getVectorN()
-            while (len(self.v) < (len(self.n))):
-                self.addVisitedPosition(currentPosition)
-                if(self.isCurrenPositionSeed(currentPosition[0],currentPosition[1])):
-                    #Es una semilla
-                    self.addNewSeed(currentPosition)
-                    vectorA = self.getVectorA(currentPosition[0],currentPosition[1])
-                    nextPosition = self.getNextPosition(vectorA,currentPosition)
-                    print(nextPosition)
-                    covertura.append(nextPosition)
-                    currentPosition = nextPosition                    
-
-                
-                else:
-                    #no es una semilla
-                    if (len(self.getVectorA(currentPosition[0],currentPosition[1])) == 0):
-                        try:
-                            currentPosition = self.getGetVectorS()[-1]
-                        except:
-                            pass
-                        self.removeSeedInS()
-
-                    else:
-                        vectorA = self.getVectorA(currentPosition[0],currentPosition[1])
-                        currentPosition = self.getNextPosition(vectorA,currentPosition)
-                        print(currentPosition)
-                        covertura.append(currentPosition)
-            print(self.findStartAndGoal()[1])
-            covertura.append(self.findStartAndGoal()[1])
-            print("Ruta encontrada")
-            return covertura
 
         def getCoverRouteWitSeed(self):
             currentPosition = self.findStartAndGoal()[0]
@@ -253,11 +256,4 @@ class DFS:
             print(self.findStartAndGoal()[1])
             covertura.append(self.findStartAndGoal()[1])
             print("Ruta encontrada")
-            return filter(lambda a: a != 0 , covertura)
-        
-        
-            
-            
-            
-
- 
+            return covertura

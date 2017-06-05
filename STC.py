@@ -181,7 +181,7 @@ class STC:
         for (x,y), element in np.ndenumerate(self.matriz4x4):
             if(element != -1 and element != 2):
                 self.vectorN.append((x,y))
-    
+                
     def addVisitedPosition(self,position):
         self.matriz1x1[position[0],position[1]] = 4
         for element in self.vectorV:

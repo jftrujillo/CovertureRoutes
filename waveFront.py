@@ -29,14 +29,14 @@ class WaveFront:
             for i in range(self.rows):
                 for j in range(self.columns):
                     if (self.boxHasANeighbour(i,j)):
-                        self.matrix[i,j] = self.getSmalestNeigbor(i,j) + 1   
+                        self.matrix[i,j] = self.getSmalestNeigbor(i,j) + 1 
+                        print(self.matrix)  
         print("La Matrix esta llena")
-    
         return self.matrix
     
 
     def boxHasANeighbour(self,i,j):
-        if(i > 0 and i < self.rows + 1 and j>0 and j<self.columns - 1   and self.matrix[i,j] != 3 and self.matrix[i,j] != 2  and self.matrix[i,j] != -1):
+        if(i >= 0 and i <= self.rows + 1 and j>=0 and j<=self.columns - 1   and self.matrix[i,j] != 3 and self.matrix[i,j] != 2  and self.matrix[i,j] != -1):
             try:
                 if (self.matrix[i - 1,j] > 1 and self.matrix[i - 1,j] != 2 and self.matrix[i - 1,j] != -1):
                     return True
@@ -69,7 +69,7 @@ class WaveFront:
 
     
     def getSmalestNeigbor(self,i,j):
-        minimunValue = 10000000
+        minimunValue = 10000000000
         try:
             if (self.matrix[i - 1,j] < minimunValue and self.matrix[i - 1,j] != 0 and self.matrix[i - 1,j] != 2 and self.matrix[i - 1,j] != -1):
                 minimunValue = self.matrix[i - 1,j]
