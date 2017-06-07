@@ -61,3 +61,6 @@ class matricesVacias:
     def defineOrigin(self,inicioVector,matriz):
         matriz[inicioVector[0],inicioVector[1]] = 2
         return matriz
+    def defineFin(self,finVector,matriz):
+        matriz[finVector[0],finVector[1]] = 3
+        return matriz

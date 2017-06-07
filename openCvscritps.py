@@ -1,12 +1,13 @@
 import numpy as np
 import cv2 as cv2
 import math
+import time
 from matricesVacias import matricesVacias
 
 
 class openCvscritps:
     GRAY_VALUE_MIN = 60
-    GRAY_VALUE_MAX = 160
+    GRAY_VALUE_MAX = 110
     columnas = 0
     filas = 0
     src = ""

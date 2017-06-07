@@ -10,19 +10,14 @@ import numpy as np
 import cv2 as cv2
 import math
 import copy
+import csv
 
 
 print("imagenes reoferencias con algoritmos de busqueda")
 
-srcImage = 'cdu_geo.tif'
+srcImage = 'cdu_geo2.tif'
 columnas = int(raw_input("ingrese el numero de columnas "))
-inicio = raw_input("Defina la posicion de inicion, separando las posiciones con ',': ")
-fin = raw_input("Defina la posicion de fin, separado las posiciones con ,")
-inicio = (int(inicio.split(",")[0]),int(inicio.split(",")[1]))
-fin = (int(fin.split(",")[0]),int(fin.split(",")[1]))
 
-print(inicio)
-print(fin)
 
 
 matrizVacia = matricesVacias(0,0)
@@ -30,14 +25,26 @@ openCvScript = openCvscritps(columnas,srcImage)
 matrizFromImage = openCvScript.getMatrizFromImage()
 filas = openCvScript.getFilasFromImage()
 b = copy.deepcopy(matrizFromImage)
+
+inicio = raw_input("Defina la posicion de inicion, separando las posiciones con ',': ")
+fin = raw_input("Defina la posicion de fin, separado las posiciones con ,")
+inicio = (int(inicio.split(",")[0]),int(inicio.split(",")[1]))
+fin = (int(fin.split(",")[0]),int(fin.split(",")[1]))
+print(inicio)
+print(fin)
 matrizInicio = matrizVacia.defineOrigin(inicio,matrizFromImage)
 print(matrizInicio)
+
 stc = STC(matrizInicio)
 coverturaStc = stc.getSTCoverture()
 gp = Graphics(b)
 gp.printCovertura(coverturaStc)
 coverturaPixels = openCvScript.getCentralPixel(coverturaStc)
 print(coverturaPixels)
+np.savetxt("coverturaSTC.txt",coverturaPixels,delimiter=',')
+with open("coverturaSTC.txt","wb") as f:
+        writer = csv.writer(f)
+        writer.writerows(coverturaPixels)
 
 
 matrizFromImageForSunshine = openCvScript.getMatrizFromImage()
@@ -53,6 +60,10 @@ graphicsSunshine = Graphics(g)
 graphicsSunshine.printCovertura(coverturaSunshine)
 coverturaPixelsSunshine = openCvScript.getCentralPixel(coverturaSunshine)
 print(coverturaPixelsSunshine)
+np.savetxt("coverturaSunshine.txt",coverturaPixelsSunshine,delimiter=',')
+with open("coverturaSunshine.txt","wb") as f:
+        writer = csv.writer(f)
+        writer.writerows(coverturaPixelsSunshine)
 
 matrizFromImageForDfs8 = openCvScript.getMatrizFromImage()
 g = copy.deepcopy(matrizFromImageForDfs8)
@@ -64,19 +75,30 @@ graphicsDfs8 = Graphics(g)
 graphicsDfs8.printCovertura(coverturaDfs8)
 coverturaPixelsDfs8 = openCvScript.getCentralPixel(coverturaDfs8)
 print(coverturaPixelsDfs8)
+np.savetxt("coverturaDfs8.txt",coverturaPixelsDfs8,delimiter=',')
+with open("coverturaDfs8.txt","wb") as f:
+        writer = csv.writer(f)
+        writer.writerows(coverturaPixelsDfs8)
+
 
 matrizFromImageForDfs = openCvScript.getMatrizFromImage()
 g = copy.deepcopy(matrizFromImageForDfs)
 matrizVacia = matricesVacias(0,0)
-matrizInicioFin = matrizVacia.definirOrigenFin(inicio,fin,matrizFromImageForDfs)
-print(matrizInicioFin)
-wf = WaveFront(matrizInicioFin,filas,columnas)
+matrizFin = matrizVacia.defineFin(fin,matrizFromImageForDfs)
+print(matrizFin)
+wf = WaveFront(matrizFin,filas,columnas)
 matrizWithWaveFront = wf.aplyWaveFrontToMatrix()
-print(matrizWithWaveFront)
-df = DFS(matrizWithWaveFront,filas,columnas)
+matrizInicioFin = matrizVacia.definirOrigenFin(inicio,fin,matrizWithWaveFront)
+print(matrizInicioFin)
+df = DFS(matrizInicioFin,columnas,filas)
 coverturaDFS = df.getCoverRouteWitSeed()
 graphicsDFS = Graphics(g)
 graphicsDFS.printCovertura(coverturaDFS)
+coverturaPixelsDFS = openCvScript.getCentralPixel(coverturaDFS)
+np.savetxt("coverturaDFS.txt",coverturaPixelsDFS,delimiter=',')
+with open("coverturaDFS.txt","wb") as f:
+        writer = csv.writer(f)
+        writer.writerows(coverturaPixelsDFS)
 
 
 
