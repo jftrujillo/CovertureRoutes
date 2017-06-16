@@ -6,6 +6,7 @@ from Sunshine import Sunshine
 from matricesVacias import matricesVacias
 from Graphics import Graphics
 from waveFront import WaveFront
+from Espiral import Espiral
 import numpy as np
 import cv2 as cv2
 import math
@@ -99,6 +100,18 @@ np.savetxt("coverturaDFS.txt",coverturaPixelsDFS,delimiter=',')
 with open("coverturaDFS.txt","wb") as f:
         writer = csv.writer(f)
         writer.writerows(coverturaPixelsDFS)
+
+matrizFromImageForEspiral = openCvScript.getMatrizFromImage()
+g = copy.deepcopy(matrizFromImageForEspiral)
+espiral = Espiral()
+covertura = espiral.getCoverturePath(matrizFromImageForEspiral,inicio[0],inicio[1])
+graphicsCovertura = Graphics(g)
+graphicsCovertura.printCovertura(covertura)
+np.savetx("coverturaEspiral.txt",covertura,delimiter = ",")
+with open("coverturaEspira.,txt","wb") as f:
+        writer = csv.writer(f)
+        writer.writerows(covertura
+
 
 
 
