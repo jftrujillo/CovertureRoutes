@@ -28,12 +28,10 @@ class Graphics:
         @param covertura: arreglo con la covertura a evaluar.
         """
         for element in covertura:
-            if (not(self.matriz[element[0]][element[1]] == 2 or self.matriz[element[0]][element[1]] == 3)):
-                self.matriz[element[0]][element[1]] = self.matriz[element[0]][element[1]] + 1
-                print(self.matriz)
-                time.sleep(0.3)
-            else:
-                pass
+            self.matriz[element[0]][element[1]] = self.matriz[element[0]][element[1]] + 1
+            print(self.matriz)
+            time.sleep(0.3)
+            raw_input("press enter")
     
     def printCoverturaWithWavefront(self,covertura):
         """

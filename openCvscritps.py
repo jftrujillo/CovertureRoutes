@@ -7,7 +7,7 @@ from matricesVacias import matricesVacias
 
 class openCvscritps:
     GRAY_VALUE_MIN = 60
-    GRAY_VALUE_MAX = 110
+    GRAY_VALUE_MAX = 115
     columnas = 0
     filas = 0
     src = ""
@@ -50,7 +50,6 @@ class openCvscritps:
                     matriz[i,j] = -1
         print(matriz)
         cv2.imshow('region',cv2.cvtColor(img,cv2.COLOR_BGR2GRAY))
-        cv2.waitKey(0)
         cv2.destroyAllWindows
         return matriz
     
