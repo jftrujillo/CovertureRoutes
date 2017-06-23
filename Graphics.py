@@ -31,7 +31,6 @@ class Graphics:
             self.matriz[element[0]][element[1]] = self.matriz[element[0]][element[1]] + 1
             print(self.matriz)
             time.sleep(0.3)
-            raw_input("press enter")
     
     def printCoverturaWithWavefront(self,covertura):
         """

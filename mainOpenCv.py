@@ -27,7 +27,7 @@ while True:
         if not i:
                 break
         obstaculo = map(lambda x: int(x),i.split(","))
-        matrizFromImage[obstaculo[0]][obstaculo[0]] = -1
+        matrizFromImage[obstaculo[0]][obstaculo[1]] = -1
         print(obstaculo)
         print(matrizFromImage)
 
@@ -48,6 +48,14 @@ matrizInicio = matrizVacia.defineOrigin(inicio,matrizFromImage)
 print(matrizInicio)
 stc = STC(matrizInicio)
 coverturaStc = stc.getSTCoverture()
+i = 0
+dupe = False
+while i < len(coverturaStc)-1:
+    if coverturaStc[i] == coverturaStc[i+1]:
+        del coverturaStc[i]
+    else:
+        i += 1
+
 gp = Graphics(b)
 gp.printCovertura(coverturaStc)
 coverturaPixels = openCvScript.getCentralPixel(coverturaStc)
@@ -66,6 +74,13 @@ c  = sunshine.getWaveFrontFromInitialPoint(inicio,fin)
 d = sunshine.getMatrizSunshine(4)
 dfs8 = DFS8(d,columnas,filas)
 coverturaSunshine = dfs8.getCoverRouteWitSeed()
+i = 0
+dupe = False
+while i < len(coverturaSunshine)-1:
+    if coverturaSunshine[i] == coverturaSunshine[i+1]:
+        del coverturaSunshine[i]
+    else:
+        i += 1
 print(coverturaSunshine)
 graphicsSunshine = Graphics(g)
 graphicsSunshine.printCovertura(coverturaSunshine)
@@ -82,6 +97,13 @@ sunshineDfs8 = Sunshine(matrizFromImageForDfs8)
 b = sunshineDfs8.getWaveFrontFromInitialPoint(inicio,fin)
 dfs8 = DFS8(b,columnas,filas)
 coverturaDfs8 = dfs8.getCoverRouteWitSeed()
+i = 0
+dupe = False
+while i < len(coverturaDfs8)-1:
+    if coverturaDfs8[i] == coverturaDfs8[i+1]:
+        del coverturaDfs8[i]
+    else:
+        i += 1
 graphicsDfs8 = Graphics(g)
 graphicsDfs8.printCovertura(coverturaDfs8)
 coverturaPixelsDfs8 = openCvScript.getCentralPixel(coverturaDfs8)
@@ -103,6 +125,13 @@ matrizInicioFin = matrizVacia.definirOrigenFin(inicio,fin,matrizWithWaveFront)
 print(matrizInicioFin)
 df = DFS(matrizInicioFin,columnas,filas)
 coverturaDFS = df.getCoverRouteWitSeed()
+i = 0
+dupe = False
+while i < len(coverturaDFS)-1:
+    if coverturaDFS[i] == coverturaDFS[i+1]:
+        del coverturaDFS[i]
+    else:
+        i += 1
 graphicsDFS = Graphics(g)
 graphicsDFS.printCovertura(coverturaDFS)
 coverturaPixelsDFS = openCvScript.getCentralPixel(coverturaDFS)
@@ -117,8 +146,8 @@ espiral = Espiral()
 coverturaEspiral = espiral.getCoverturePath(matrizFromImageForEspiral,inicio[0],inicio[1])
 coverturaEspiralPixels = openCvScript.getCentralPixel(coverturaEspiral)
 graphicsCovertura = Graphics(g)
-graphicsCovertura.printCovertura(covertura)
+graphicsCovertura.printCovertura(coverturaEspiral)
 np.savetxt("coverturaEspiral.txt",coverturaEspiralPixels,delimiter = ",")
 with open("coverturaEspiral.txt","wb") as f:
         writer = csv.writer(f)
-        writer.writerows(covertura)
+        writer.writerows(coverturaEspiralPixels)

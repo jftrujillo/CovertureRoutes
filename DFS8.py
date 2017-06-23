@@ -234,6 +234,8 @@ class DFS8:
                     #no es una semilla
                     if (len(self.getVectorA(currentPosition[0],currentPosition[1])) == 0):
                         try:
+                            if not(len(self.v) < (len(self.n) - 1)):
+                                break
                             removeElement = []
                             for element in reversed(parentVector):
                                 if (not(element == [0,0])):
