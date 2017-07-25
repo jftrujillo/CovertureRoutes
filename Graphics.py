@@ -6,11 +6,15 @@ class Graphics:
     clase para ver el funcionamiento de los algoritmos de cobertura
     """
     matriz = 0
-    down = 1
-    left = 2 
-    up = 3
-    rigth = 4
-    static = 5
+    up = 1
+    upRigth = 2
+    rigth = 3
+    downRigth = 4
+    down = 5
+    downLeft = 6
+    left = 7
+    upLeft = 8
+    static = 9
 
     def __init__(self,matriz):
         self.matriz = matriz
@@ -61,13 +65,16 @@ class Graphics:
 
         print("Visitas = " + str(visit))
         print("Re Visitas = " + str(reVisit))
+        return (visit,reVisit)
     
     def numberOfTwist(self,covertura):
         """
         imprime la cantidad de giros de 90 grados y de 180 grados.
         @param covertura: arreglo con la covertura a evaluar.
         """
+        twist45 = 0
         twist90 = 0
+        twist135 = 0
         twist180 = 0
         orientation =  0
         lastOrientation = 0
@@ -79,11 +86,14 @@ class Graphics:
                         pass
                     else:
                         x = abs(lastOrientation - orientation)
-                        if x == 2:
-                            #Giro de 180 grados
-                            twist180 = twist180 + 1
-                        elif x == 1 or x == 3:
+                        if x == 1 or x == 7:
+                            twist45 = twist45 + 1
+                        elif x == 2 or x == 6:
                             twist90 = twist90 + 1
+                        elif x == 3 or x == 5:
+                            twist135 = twist135 + 1
+                        elif x == 4:
+                            twist180 = twist180 + 1                
                         lastOrientation = orientation
                 else:
                     pass
@@ -92,18 +102,27 @@ class Graphics:
 
         print("Giros de 90 grados: " + str(twist90))
         print("giros de 180 grados: " + str(twist180))
+        return ("45 grados : {0} , 90 grados : {1} , 135 grados : {2} , 180 grados {3}".format(twist45,twist90,twist135,twist180))
 
     def orientationOfWay(self,currentPosition,futurePosition):
         row = futurePosition[0] - currentPosition[0]        
         column = futurePosition[1] - currentPosition[1]
         if (row == 0 and column > 0):
             return self.rigth
-        if (row == 0 and column < 0):
-            return self.left
-        if (row > 0 and column == 0):
-            return self.down
+        if (row < 0 and column > 0):
+            return self.upRigth
         if (row < 0 and column == 0):
             return self.up
+        if (row < 0 and column < 0):
+            return self.upLeft
+        if (row == 0 and column < 0):
+            return self.left
+        if (row > 0  and column < 0):
+            return self.downLeft
+        if (row > 0 and column == 0):
+            return self.down
+        if (row > 0 and column > 0):
+            return self.downRigth
         if (row == 0 and column == 0):
             return self.static
             

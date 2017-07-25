@@ -44,6 +44,7 @@ inicio = (int(inicio.split(",")[0]),int(inicio.split(",")[1]))
 fin = (int(fin.split(",")[0]),int(fin.split(",")[1]))
 print(inicio)
 print(fin)
+
 matrizInicio = matrizVacia.defineOrigin(inicio,matrizFromImage)
 print(matrizInicio)
 stc = STC(matrizInicio)
@@ -58,6 +59,12 @@ while i < len(coverturaStc)-1:
 
 gp = Graphics(b)
 gp.printCovertura(coverturaStc)
+(visit, revisit) = gp.counter()
+twist = gp.numberOfTwist(coverturaStc)
+with open("propiedadesSTC.txt","wb") as f:
+        f.write("visitas: {visitas} re visitas : {revisitas} giros {giros}".format(visitas = visit,revisitas=revisit, giros = twist))
+
+
 coverturaPixels = openCvScript.getCentralPixel(coverturaStc)
 print(coverturaPixels)
 np.savetxt("coverturaSTC.txt",coverturaPixels,delimiter=',')
@@ -84,6 +91,13 @@ while i < len(coverturaSunshine)-1:
 print(coverturaSunshine)
 graphicsSunshine = Graphics(g)
 graphicsSunshine.printCovertura(coverturaSunshine)
+(visit, revisit) = graphicsSunshine.counter()
+twist = graphicsSunshine.numberOfTwist(coverturaSunshine)
+
+with open("propiedadesSunshine.txt","wb") as f:
+        f.write("visitas: {visitas} re visitas : {revisitas} giros {giros}".format(visitas = visit,revisitas=revisit, giros = twist))
+
+
 coverturaPixelsSunshine = openCvScript.getCentralPixel(coverturaSunshine)
 print(coverturaPixelsSunshine)
 np.savetxt("coverturaSunshine.txt",coverturaPixelsSunshine,delimiter=',')
@@ -106,6 +120,13 @@ while i < len(coverturaDfs8)-1:
         i += 1
 graphicsDfs8 = Graphics(g)
 graphicsDfs8.printCovertura(coverturaDfs8)
+
+(visit,revisit) = graphicsDfs8.counter()
+twist = graphicsDfs8.numberOfTwist(coverturaDfs8)
+with open("propiadesDfs8.txt","wb") as f:
+        f.write("visitas: {visitas} re visitas : {revisitas} giros {giros}".format(visitas = visit,revisitas=revisit, giros = twist))
+
+
 coverturaPixelsDfs8 = openCvScript.getCentralPixel(coverturaDfs8)
 print(coverturaPixelsDfs8)
 np.savetxt("coverturaDfs8.txt",coverturaPixelsDfs8,delimiter=',')
@@ -134,6 +155,12 @@ while i < len(coverturaDFS)-1:
         i += 1
 graphicsDFS = Graphics(g)
 graphicsDFS.printCovertura(coverturaDFS)
+(visit,revisit) = graphicsDFS.counter()
+twist = graphicsDFS.numberOfTwist(coverturaDFS)
+with open ("propiedesDfs.txt","wb") as f:
+        f.write("visitas: {visitas} re visitas : {revisitas} giros {giros}".format(visitas = visit,revisitas=revisit, giros = twist))
+
+
 coverturaPixelsDFS = openCvScript.getCentralPixel(coverturaDFS)
 np.savetxt("coverturaDFS.txt",coverturaPixelsDFS,delimiter=',')
 with open("coverturaDFS.txt","wb") as f:
@@ -147,6 +174,13 @@ coverturaEspiral = espiral.getCoverturePath(matrizFromImageForEspiral,inicio[0],
 coverturaEspiralPixels = openCvScript.getCentralPixel(coverturaEspiral)
 graphicsCovertura = Graphics(g)
 graphicsCovertura.printCovertura(coverturaEspiral)
+(visit,revisit) = graphicsCovertura.counter()
+twist = graphicsCovertura.numberOfTwist(coverturaEspiral)
+
+with open ("propiedaesCovertura.txt","wb") as f:
+        f.write("visitas: {visitas} re visitas : {revisitas} giros {giros}".format(visitas = visit,revisitas=revisit, giros = twist))
+        
+        
 np.savetxt("coverturaEspiral.txt",coverturaEspiralPixels,delimiter = ",")
 with open("coverturaEspiral.txt","wb") as f:
         writer = csv.writer(f)

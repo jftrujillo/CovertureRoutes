@@ -6,23 +6,25 @@
 !_TAG_PROGRAM_VERSION	5.8	//
 A	../espiral-competa.py	/^A = np.matrix([[0,-1],$/;"	kind:variable	line:7
 B	../espiral-competa.py	/^B = np.matrix([[0,1],$/;"	kind:variable	line:9
-DFS	../DFS.py	/^class DFS:$/;"	kind:class	line:4
-DFS	../main.py	/^from DFS import DFS$/;"	kind:namespace	line:6
+DFS	../DFS.py	/^class DFS:$/;"	kind:class	line:5
+DFS	../main.py	/^from DFS import DFS$/;"	kind:namespace	line:4
 DFS	../mainOpenCv.py	/^from DFS import DFS$/;"	kind:namespace	line:4
 DFS.py	../DFS.py	1;"	kind:file	line:1
 DFS8	../DFS8.py	/^class DFS8:$/;"	kind:class	line:4
+DFS8	../main.py	/^from DFS8 import DFS8$/;"	kind:namespace	line:2
 DFS8	../mainOpenCv.py	/^from DFS8 import DFS8$/;"	kind:namespace	line:2
 DFS8	../mainSunshine.py	/^from DFS8 import DFS8$/;"	kind:namespace	line:6
 DFS8.py	../DFS8.py	1;"	kind:file	line:1
 Espiral	../Espiral.py	/^class Espiral:$/;"	kind:class	line:6
 Espiral	../espiral-competa.py	/^from Espiral import Espiral$/;"	kind:namespace	line:5
+Espiral	../main.py	/^from Espiral import Espiral$/;"	kind:namespace	line:9
+Espiral	../mainOpenCv.py	/^from Espiral import Espiral$/;"	kind:namespace	line:9
 Espiral.py	../Espiral.py	1;"	kind:file	line:1
 GRAY_VALUE_MAX	../OpenCV.py	/^GRAY_VALUE_MAX = 160$/;"	kind:variable	line:8
-GRAY_VALUE_MAX	../openCvscritps.py	/^    GRAY_VALUE_MAX = 110$/;"	kind:variable	line:10
+GRAY_VALUE_MAX	../openCvscritps.py	/^    GRAY_VALUE_MAX = 115$/;"	kind:variable	line:10
 GRAY_VALUE_MIN	../OpenCV.py	/^GRAY_VALUE_MIN = 60$/;"	kind:variable	line:7
 GRAY_VALUE_MIN	../openCvscritps.py	/^    GRAY_VALUE_MIN = 60$/;"	kind:variable	line:9
 Graphic	../Util/graphic.py	/^class Graphic:$/;"	kind:class	line:2
-Graphic	../main.py	/^from Util.graphic import Graphic$/;"	kind:namespace	line:4
 Graphics	../Espiral.py	/^from Graphics import Graphics$/;"	kind:namespace	line:4
 Graphics	../Graphics.py	/^class Graphics:$/;"	kind:class	line:4
 Graphics	../espiral-competa.py	/^from Graphics import Graphics$/;"	kind:namespace	line:4
@@ -38,22 +40,24 @@ OBSTACULO	../Sunshine.py	/^    OBSTACULO = -1$/;"	kind:variable	line:12
 OpenCV.py	../OpenCV.py	1;"	kind:file	line:1
 PARCIALMENTEVISITADO	../STC.py	/^    PARCIALMENTEVISITADO = 1$/;"	kind:variable	line:18
 STC	../STC.py	/^class STC:$/;"	kind:class	line:4
+STC	../main.py	/^from STC import STC$/;"	kind:namespace	line:3
 STC	../mainOpenCv.py	/^from STC import STC$/;"	kind:namespace	line:3
 STC	../mainStc.py	/^from STC import STC$/;"	kind:namespace	line:3
 STC.py	../STC.py	1;"	kind:file	line:1
 Sunshine	../Sunshine.py	/^class Sunshine:$/;"	kind:class	line:5
+Sunshine	../main.py	/^from Sunshine import Sunshine$/;"	kind:namespace	line:5
 Sunshine	../mainOpenCv.py	/^from Sunshine import Sunshine$/;"	kind:namespace	line:5
 Sunshine	../mainSunshine.py	/^from Sunshine import Sunshine$/;"	kind:namespace	line:4
 Sunshine.py	../Sunshine.py	1;"	kind:file	line:1
 TOTALMENTEVISITADO	../STC.py	/^    TOTALMENTEVISITADO = 2$/;"	kind:variable	line:19
 VISITADO	../Sunshine.py	/^    VISITADO = 1$/;"	kind:variable	line:11
-WaveFront	../main.py	/^from waveFront import WaveFront$/;"	kind:namespace	line:5
+WaveFront	../main.py	/^from waveFront import WaveFront$/;"	kind:namespace	line:8
 WaveFront	../mainOpenCv.py	/^from waveFront import WaveFront$/;"	kind:namespace	line:8
 WaveFront	../waveFront.py	/^class WaveFront:$/;"	kind:class	line:9
-__init__	../DFS.py	/^        def __init__(self,matriz,colums,rows):$/;"	kind:member	line:26
+__init__	../DFS.py	/^        def __init__(self,matriz,colums,rows):$/;"	kind:member	line:27
 __init__	../DFS8.py	/^        def __init__(self,matriz,colums,rows):$/;"	kind:member	line:26
 __init__	../Espiral.py	/^    def __init__(self): $/;"	kind:member	line:8
-__init__	../Graphics.py	/^    def __init__(self,matriz):$/;"	kind:member	line:15
+__init__	../Graphics.py	/^    def __init__(self,matriz):$/;"	kind:member	line:19
 __init__	../STC.py	/^    def __init__(self,matriz4x4):$/;"	kind:member	line:23
 __init__	../Sunshine.py	/^    def __init__(self, matriz):$/;"	kind:member	line:21
 __init__	../matricesVacias.py	/^    def __init__(self,columnas,filas):$/;"	kind:member	line:6
@@ -61,102 +65,123 @@ __init__	../openCvscritps.py	/^    def __init__(self,columnas,src):$/;"	kind:mem
 __init__	../waveFront.py	/^    def __init__(self,matrix,rows,columns):$/;"	kind:member	line:14
 __init__.py	../Util/__init__.py	1;"	kind:file	line:1
 a	../espiral-competa.py	/^a = mv.matrizForSunshine()$/;"	kind:variable	line:25
-a	../main.py	/^a = x.matrizConObstaculos()$/;"	kind:variable	line:23
 a	../mainStc.py	/^a = matrisVacia.matrizForStc()$/;"	kind:variable	line:12
 a	../mainSunshine.py	/^a = matrisVacia.matrizForSunshine()$/;"	kind:variable	line:14
-addNewSeed	../DFS.py	/^        def addNewSeed(self, seed):$/;"	kind:member	line:120
+addNewSeed	../DFS.py	/^        def addNewSeed(self, seed):$/;"	kind:member	line:121
 addNewSeed	../DFS8.py	/^        def addNewSeed(self, seed):$/;"	kind:member	line:144
-addVisitedPosition	../DFS.py	/^        def addVisitedPosition(self,visited):$/;"	kind:member	line:107
+addVisitedPosition	../DFS.py	/^        def addVisitedPosition(self,visited):$/;"	kind:member	line:108
 addVisitedPosition	../DFS8.py	/^        def addVisitedPosition(self,visited):$/;"	kind:member	line:131
 addVisitedPosition	../STC.py	/^    def addVisitedPosition(self,position):$/;"	kind:member	line:185
 aplyWaveFrontToMatrix	../waveFront.py	/^    def aplyWaveFrontToMatrix(self):$/;"	kind:member	line:27
 areAllNodesVisited	../STC.py	/^    def areAllNodesVisited(self):$/;"	kind:member	line:73
 b	../espiral-competa.py	/^b = copy.deepcopy(a)$/;"	kind:variable	line:26
-b	../main.py	/^b = x.matrizConObstaculos()$/;"	kind:variable	line:24
-b	../mainOpenCv.py	/^b = copy.deepcopy(matrizFromImage)$/;"	kind:variable	line:27
-b	../mainOpenCv.py	/^b = sunshine.getWaveFrontFromObstacle()$/;"	kind:variable	line:53
-b	../mainOpenCv.py	/^b = sunshineDfs8.getWaveFrontFromInitialPoint(inicio,fin)$/;"	kind:variable	line:71
+b	../mainOpenCv.py	/^b = copy.deepcopy(matrizFromImage)$/;"	kind:variable	line:35
+b	../mainOpenCv.py	/^b = sunshine.getWaveFrontFromObstacle()$/;"	kind:variable	line:72
+b	../mainOpenCv.py	/^b = sunshineDfs8.getWaveFrontFromInitialPoint(inicio,fin)$/;"	kind:variable	line:97
 b	../mainStc.py	/^b = copy.deepcopy(a)$/;"	kind:variable	line:13
 b	../mainSunshine.py	/^b = sunshie.getWaveFrontFromObstacle()$/;"	kind:variable	line:18
 boxHasANeighbour	../waveFront.py	/^    def boxHasANeighbour(self,i,j):$/;"	kind:member	line:38
-c	../mainOpenCv.py	/^c  = sunshine.getWaveFrontFromInitialPoint(inicio,fin)$/;"	kind:variable	line:54
+c	../mainOpenCv.py	/^c  = sunshine.getWaveFrontFromInitialPoint(inicio,fin)$/;"	kind:variable	line:73
+c	../mainOpenCv.py	/^c = copy.deepcopy(b)$/;"	kind:variable	line:36
+c	../mainOpenCv.py	/^c = copy.deepcopy(b)$/;"	kind:variable	line:37
 c	../mainSunshine.py	/^c  = sunshie.getWaveFrontFromInitialPoint((0,3),(0,0))$/;"	kind:variable	line:19
+c1	../mainOpenCv.py	/^c1 = copy.deepcopy(b)$/;"	kind:variable	line:38
+c2	../mainOpenCv.py	/^c2 = copy.deepcopy(b)$/;"	kind:variable	line:39
+c3	../mainOpenCv.py	/^c3 = copy.deepcopy(b)$/;"	kind:variable	line:40
 checkStateOfNode	../STC.py	/^    def  checkStateOfNode(self,checkedNode):$/;"	kind:member	line:151
 columnas	../OpenCV.py	/^columnas = int(raw_input('ingrese numero de columnas: '))$/;"	kind:variable	line:30
-columnas	../main.py	/^columnas = int(raw_input('ingrese numero de columnas: '))$/;"	kind:variable	line:20
+columnas	../main.py	/^columnas = int(raw_input("ingrese el numero de columnas "))$/;"	kind:variable	line:27
 columnas	../mainOpenCv.py	/^columnas = int(raw_input("ingrese el numero de columnas "))$/;"	kind:variable	line:19
 columnas	../mainStc.py	/^columnas = int(raw_input('ingrese numero de columnas: '))$/;"	kind:variable	line:9
 columnas	../mainSunshine.py	/^columnas = int(raw_input('ingrese el numero de columnas: '))$/;"	kind:variable	line:11
 columnas	../openCvscritps.py	/^    columnas = 0$/;"	kind:variable	line:11
-columns	../DFS.py	/^        columns = 0$/;"	kind:variable	line:21
+columns	../DFS.py	/^        columns = 0$/;"	kind:variable	line:22
 columns	../DFS8.py	/^        columns = 0$/;"	kind:variable	line:21
 columns	../matricesVacias.py	/^    columns = 0$/;"	kind:variable	line:4
 columns	../waveFront.py	/^    columns = 0$/;"	kind:variable	line:12
 copy	../Espiral.py	/^import copy$/;"	kind:namespace	line:2
 copy	../Sunshine.py	/^import copy as copy$/;"	kind:namespace	line:3
 copy	../espiral-competa.py	/^import copy$/;"	kind:namespace	line:2
-copy	../mainOpenCv.py	/^import copy$/;"	kind:namespace	line:12
+copy	../main.py	/^import copy$/;"	kind:namespace	line:13
+copy	../mainOpenCv.py	/^import copy$/;"	kind:namespace	line:13
 copy	../mainStc.py	/^import copy$/;"	kind:namespace	line:5
 copy	../mainSunshine.py	/^import copy as copy$/;"	kind:namespace	line:8
-counter	../Graphics.py	/^    def counter(self):$/;"	kind:member	line:52
+counter	../Graphics.py	/^    def counter(self):$/;"	kind:member	line:53
 counterNeigborgs	../waveFront.py	/^    counterNeigborgs = 0$/;"	kind:variable	line:13
 covertura	../espiral-competa.py	/^covertura = espiral.getCoverturePath(a,pi_x,pi_y)$/;"	kind:variable	line:41
-covertura	../main.py	/^covertura = df.getCoverRouteWitSeed()$/;"	kind:variable	line:34
 covertura	../mainStc.py	/^covertura = stc.getSTCoverture()$/;"	kind:variable	line:19
 covertura	../mainSunshine.py	/^covertura = dfs8.getCoverRouteWitSeed()$/;"	kind:variable	line:22
-coverturaDFS	../mainOpenCv.py	/^coverturaDFS = df.getCoverRouteWitSeed()$/;"	kind:variable	line:94
-coverturaDfs8	../mainOpenCv.py	/^coverturaDfs8 = dfs8.getCoverRouteWitSeed()$/;"	kind:variable	line:73
-coverturaPixels	../mainOpenCv.py	/^coverturaPixels = openCvScript.getCentralPixel(coverturaStc)$/;"	kind:variable	line:42
-coverturaPixelsDFS	../mainOpenCv.py	/^coverturaPixelsDFS = openCvScript.getCentralPixel(coverturaDFS)$/;"	kind:variable	line:97
-coverturaPixelsDfs8	../mainOpenCv.py	/^coverturaPixelsDfs8 = openCvScript.getCentralPixel(coverturaDfs8)$/;"	kind:variable	line:76
-coverturaPixelsSunshine	../mainOpenCv.py	/^coverturaPixelsSunshine = openCvScript.getCentralPixel(coverturaSunshine)$/;"	kind:variable	line:61
-coverturaStc	../mainOpenCv.py	/^coverturaStc = stc.getSTCoverture()$/;"	kind:variable	line:39
-coverturaSunshine	../mainOpenCv.py	/^coverturaSunshine = dfs8.getCoverRouteWitSeed()$/;"	kind:variable	line:57
-csv	../main.py	/^import csv$/;"	kind:namespace	line:2
-csv	../mainOpenCv.py	/^import csv$/;"	kind:namespace	line:13
+coverturaDFS	../main.py	/^coverturaDFS = df.getCoverRouteWitSeed()$/;"	kind:variable	line:59
+coverturaDFS	../mainOpenCv.py	/^coverturaDFS = df.getCoverRouteWitSeed()$/;"	kind:variable	line:127
+coverturaDfs8	../mainOpenCv.py	/^coverturaDfs8 = dfs8.getCoverRouteWitSeed()$/;"	kind:variable	line:99
+coverturaEspiral	../mainOpenCv.py	/^coverturaEspiral = espiral.getCoverturePath(matrizFromImageForEspiral,inicio[0],inicio[1])$/;"	kind:variable	line:146
+coverturaEspiralPixels	../mainOpenCv.py	/^coverturaEspiralPixels = openCvScript.getCentralPixel(coverturaEspiral)$/;"	kind:variable	line:147
+coverturaPixels	../mainOpenCv.py	/^coverturaPixels = openCvScript.getCentralPixel(coverturaStc)$/;"	kind:variable	line:61
+coverturaPixelsDFS	../main.py	/^coverturaPixelsDFS = openCvScript.getCentralPixel(coverturaDFS)$/;"	kind:variable	line:74
+coverturaPixelsDFS	../mainOpenCv.py	/^coverturaPixelsDFS = openCvScript.getCentralPixel(coverturaDFS)$/;"	kind:variable	line:137
+coverturaPixelsDfs8	../mainOpenCv.py	/^coverturaPixelsDfs8 = openCvScript.getCentralPixel(coverturaDfs8)$/;"	kind:variable	line:109
+coverturaPixelsSunshine	../mainOpenCv.py	/^coverturaPixelsSunshine = openCvScript.getCentralPixel(coverturaSunshine)$/;"	kind:variable	line:87
+coverturaStc	../mainOpenCv.py	/^coverturaStc = stc.getSTCoverture()$/;"	kind:variable	line:50
+coverturaSunshine	../mainOpenCv.py	/^coverturaSunshine = dfs8.getCoverRouteWitSeed()$/;"	kind:variable	line:76
+csv	../main.py	/^import csv$/;"	kind:namespace	line:14
+csv	../mainOpenCv.py	/^import csv$/;"	kind:namespace	line:14
 currentNode	../STC.py	/^    currentNode = 0$/;"	kind:variable	line:21
 currentPosition	../STC.py	/^    currentPosition = 0$/;"	kind:variable	line:20
 cv2	../OpenCV.py	/^import cv2 as cv2$/;"	kind:namespace	line:2
-cv2	../mainOpenCv.py	/^import cv2 as cv2$/;"	kind:namespace	line:10
+cv2	../main.py	/^import cv2 as cv2$/;"	kind:namespace	line:11
+cv2	../mainOpenCv.py	/^import cv2 as cv2$/;"	kind:namespace	line:11
 cv2	../openCvscritps.py	/^import cv2 as cv2$/;"	kind:namespace	line:2
-d	../mainOpenCv.py	/^d = sunshine.getMatrizSunshine(4)$/;"	kind:variable	line:55
+d	../mainOpenCv.py	/^d = sunshine.getMatrizSunshine(4)$/;"	kind:variable	line:74
 d	../mainSunshine.py	/^d = sunshie.getMatrizSunshine(4)$/;"	kind:variable	line:20
 defineFin	../matricesVacias.py	/^    def defineFin(self,finVector,matriz):$/;"	kind:member	line:64
 defineOrigin	../matricesVacias.py	/^    def defineOrigin(self,inicioVector,matriz):$/;"	kind:member	line:61
 definirOrigenFin	../matricesVacias.py	/^    def definirOrigenFin(self,inicio,fin,matriz):$/;"	kind:member	line:56
-df	../main.py	/^df = DFS(matrizWithWaveFront,filas,columnas)$/;"	kind:variable	line:33
-df	../mainOpenCv.py	/^df = DFS(matrizInicioFin,columnas,filas)$/;"	kind:variable	line:93
-dfs8	../mainOpenCv.py	/^dfs8 = DFS8(b,columnas,filas)$/;"	kind:variable	line:72
-dfs8	../mainOpenCv.py	/^dfs8 = DFS8(d,columnas,filas)$/;"	kind:variable	line:56
+df	../main.py	/^df = DFS(matrizInicioFin,columnas,filas)$/;"	kind:variable	line:58
+df	../mainOpenCv.py	/^df = DFS(matrizInicioFin,columnas,filas)$/;"	kind:variable	line:126
+dfs8	../mainOpenCv.py	/^dfs8 = DFS8(b,columnas,filas)$/;"	kind:variable	line:98
+dfs8	../mainOpenCv.py	/^dfs8 = DFS8(d,columnas,filas)$/;"	kind:variable	line:75
 dfs8	../mainSunshine.py	/^dfs8 = DFS8(d,columnas,filas)$/;"	kind:variable	line:21
-down	../Graphics.py	/^    down = 1$/;"	kind:variable	line:9
+down	../Graphics.py	/^    down = 5$/;"	kind:variable	line:13
 down	../STC.py	/^    down = 2$/;"	kind:variable	line:15
 down	../Sunshine.py	/^    down = 2$/;"	kind:variable	line:8
+downLeft	../Graphics.py	/^    downLeft = 6$/;"	kind:variable	line:14
+downRigth	../Graphics.py	/^    downRigth = 4$/;"	kind:variable	line:12
+dupe	../main.py	/^        dupe = True$/;"	kind:variable	line:68
+dupe	../main.py	/^dupe = False$/;"	kind:variable	line:61
+dupe	../main.py	/^dupe = False$/;"	kind:variable	line:63
+dupe	../mainOpenCv.py	/^dupe = False$/;"	kind:variable	line:101
+dupe	../mainOpenCv.py	/^dupe = False$/;"	kind:variable	line:129
+dupe	../mainOpenCv.py	/^dupe = False$/;"	kind:variable	line:52
+dupe	../mainOpenCv.py	/^dupe = False$/;"	kind:variable	line:78
 espiral	../espiral-competa.py	/^espiral = Espiral()$/;"	kind:variable	line:40
+espiral	../mainOpenCv.py	/^espiral = Espiral()$/;"	kind:variable	line:145
 espiral-competa.py	../espiral-competa.py	1;"	kind:file	line:1
 filas	../OpenCV.py	/^filas = math.floor(img.shape[0]\/sizeOfRegion)$/;"	kind:variable	line:33
-filas	../main.py	/^filas = int(raw_input("ingerese filas: "))$/;"	kind:variable	line:21
-filas	../mainOpenCv.py	/^filas = openCvScript.getFilasFromImage()$/;"	kind:variable	line:26
+filas	../main.py	/^filas = openCvScript.getFilasFromImage()$/;"	kind:variable	line:32
+filas	../mainOpenCv.py	/^filas = openCvScript.getFilasFromImage()$/;"	kind:variable	line:24
 filas	../mainStc.py	/^filas = int(raw_input("ingerese filas: "))$/;"	kind:variable	line:10
 filas	../mainSunshine.py	/^filas = int(raw_input('ingrese el numero de filas: '))$/;"	kind:variable	line:12
 filas	../matricesVacias.py	/^    filas = 0$/;"	kind:variable	line:5
 filas	../openCvscritps.py	/^    filas = 0$/;"	kind:variable	line:12
-fin	../main.py	/^fin = raw_input("Defina la posicion de fin, separando las posiciones con ',': ")$/;"	kind:variable	line:27
-fin	../mainOpenCv.py	/^fin = (int(fin.split(",")[0]),int(fin.split(",")[1]))$/;"	kind:variable	line:32
-fin	../mainOpenCv.py	/^fin = raw_input("Defina la posicion de fin, separado las posiciones con ,")$/;"	kind:variable	line:30
-findStartAndGoal	../DFS.py	/^        def findStartAndGoal(self):$/;"	kind:member	line:143
+fin	../main.py	/^fin = (int(fin.split(",")[0]),int(fin.split(",")[1]))$/;"	kind:variable	line:45
+fin	../main.py	/^fin = raw_input("Defina la posicion de fin, separado las posiciones con ,")$/;"	kind:variable	line:43
+fin	../mainOpenCv.py	/^fin = (int(fin.split(",")[0]),int(fin.split(",")[1]))$/;"	kind:variable	line:44
+fin	../mainOpenCv.py	/^fin = raw_input("Defina la posicion de fin, separado las posiciones con ,")$/;"	kind:variable	line:42
+findStartAndGoal	../DFS.py	/^        def findStartAndGoal(self):$/;"	kind:member	line:144
 findStartAndGoal	../DFS8.py	/^        def findStartAndGoal(self):$/;"	kind:member	line:167
-g	../mainOpenCv.py	/^g = copy.deepcopy(matrizFromImageForDfs)$/;"	kind:variable	line:85
-g	../mainOpenCv.py	/^g = copy.deepcopy(matrizFromImageForDfs8)$/;"	kind:variable	line:69
-g	../mainOpenCv.py	/^g = copy.deepcopy(matrizFromImageForSunshine)$/;"	kind:variable	line:51
+g	../main.py	/^g = copy.deepcopy(matrizFromImageForDfs)$/;"	kind:variable	line:50
+g	../mainOpenCv.py	/^g = copy.deepcopy(matrizFromImageForDfs)$/;"	kind:variable	line:118
+g	../mainOpenCv.py	/^g = copy.deepcopy(matrizFromImageForDfs8)$/;"	kind:variable	line:95
+g	../mainOpenCv.py	/^g = copy.deepcopy(matrizFromImageForEspiral)$/;"	kind:variable	line:144
+g	../mainOpenCv.py	/^g = copy.deepcopy(matrizFromImageForSunshine)$/;"	kind:variable	line:70
 g	../mainSunshine.py	/^g = copy.deepcopy(a)$/;"	kind:variable	line:15
 getCentralPixel	../openCvscritps.py	/^    def getCentralPixel(self,covertura):$/;"	kind:member	line:20
-getCoverRoute	../DFS.py	/^        def getCoverRoute(self):$/;"	kind:member	line:177
-getCoverRouteWitSeed	../DFS.py	/^        def getCoverRouteWitSeed(self):$/;"	kind:member	line:212
+getCoverRoute	../DFS.py	/^        def getCoverRoute(self):$/;"	kind:member	line:178
+getCoverRouteWitSeed	../DFS.py	/^        def getCoverRouteWitSeed(self):$/;"	kind:member	line:213
 getCoverRouteWitSeed	../DFS8.py	/^        def getCoverRouteWitSeed(self):$/;"	kind:member	line:215
 getCoverturePath	../Espiral.py	/^    def getCoverturePath(self,a,pi_x,pi_y):$/;"	kind:member	line:11
-getFilasFromImage	../openCvscritps.py	/^    def getFilasFromImage(self):$/;"	kind:member	line:57
-getGetVectorS	../DFS.py	/^        def getGetVectorS(self):$/;"	kind:member	line:126
+getFilasFromImage	../openCvscritps.py	/^    def getFilasFromImage(self):$/;"	kind:member	line:56
+getGetVectorS	../DFS.py	/^        def getGetVectorS(self):$/;"	kind:member	line:127
 getGetVectorS	../DFS8.py	/^        def getGetVectorS(self):$/;"	kind:member	line:150
 getGrayIntesistyOfImage	../OpenCV.py	/^def getGrayIntesistyOfImage(img):$/;"	kind:function	line:11
 getGrayIntesistyOfImage	../openCvscritps.py	/^    def getGrayIntesistyOfImage(self,img):$/;"	kind:member	line:27
@@ -166,41 +191,50 @@ getMatrizFromImage	../openCvscritps.py	/^    def getMatrizFromImage(self):$/;"	k
 getMatrizSunshine	../Sunshine.py	/^    def getMatrizSunshine(self,incorfomidad):$/;"	kind:member	line:68
 getNewNodeArround	../STC.py	/^    def getNewNodeArround(self,currentPosition4x4,currentNode,parentNode):$/;"	kind:member	line:80
 getNewNodeArroundPartialVisited	../STC.py	/^    def getNewNodeArroundPartialVisited(self,currentPosition4x4,currentNode,vectorS):$/;"	kind:member	line:92
-getNextPosition	../DFS.py	/^        def getNextPosition(self,a,currentPosition):$/;"	kind:member	line:154
+getNextPosition	../DFS.py	/^        def getNextPosition(self,a,currentPosition):$/;"	kind:member	line:155
 getNextPosition	../DFS8.py	/^        def getNextPosition(self,a,currentPosition):$/;"	kind:member	line:178
 getNode1x1State	../STC.py	/^    def getNode1x1State(self,position):$/;"	kind:member	line:229
 getNode4x4	../STC.py	/^    def getNode4x4(self,position):$/;"	kind:member	line:221
 getPosiblesNextNodes	../STC.py	/^    def getPosiblesNextNodes(self,currentPosition,lastPosition):$/;"	kind:member	line:252
 getSTCoverture	../STC.py	/^    def getSTCoverture(self):$/;"	kind:member	line:27
 getSmalestNeigbor	../waveFront.py	/^    def getSmalestNeigbor(self,i,j):$/;"	kind:member	line:71
-getVectorA	../DFS.py	/^        def getVectorA(self,i,j):$/;"	kind:member	line:64
+getVectorA	../DFS.py	/^        def getVectorA(self,i,j):$/;"	kind:member	line:65
 getVectorA	../DFS8.py	/^        def getVectorA(self,i,j):$/;"	kind:member	line:79
-getVectorN	../DFS.py	/^        def getVectorN(self):$/;"	kind:member	line:32
+getVectorN	../DFS.py	/^        def getVectorN(self):$/;"	kind:member	line:33
 getVectorN	../DFS8.py	/^        def getVectorN(self):$/;"	kind:member	line:35
 getWaveFrontFromInitialPoint	../Sunshine.py	/^    def getWaveFrontFromInitialPoint(self,(x,y),(i,j)):$/;"	kind:member	line:48
 getWaveFrontFromObstacle	../Sunshine.py	/^    def getWaveFrontFromObstacle(self):$/;"	kind:member	line:31
-gp	../mainOpenCv.py	/^gp = Graphics(b)$/;"	kind:variable	line:40
+gp	../mainOpenCv.py	/^gp = Graphics(b)$/;"	kind:variable	line:59
 gp	../mainStc.py	/^gp = Graphics(b)$/;"	kind:variable	line:20
-grap	../main.py	/^grap = Graphics(b)$/;"	kind:variable	line:36
-graphic	../main.py	/^graphic = Graphic()$/;"	kind:variable	line:18
 graphic.py	../Util/graphic.py	1;"	kind:file	line:1
 graphics	../mainSunshine.py	/^graphics = Graphics(g)$/;"	kind:variable	line:25
-graphicsDFS	../mainOpenCv.py	/^graphicsDFS = Graphics(g)$/;"	kind:variable	line:95
-graphicsDfs8	../mainOpenCv.py	/^graphicsDfs8 = Graphics(g)$/;"	kind:variable	line:74
-graphicsSunshine	../mainOpenCv.py	/^graphicsSunshine = Graphics(g)$/;"	kind:variable	line:59
+graphicsCovertura	../mainOpenCv.py	/^graphicsCovertura = Graphics(g)$/;"	kind:variable	line:148
+graphicsDFS	../main.py	/^graphicsDFS = Graphics(g)$/;"	kind:variable	line:72
+graphicsDFS	../mainOpenCv.py	/^graphicsDFS = Graphics(g)$/;"	kind:variable	line:135
+graphicsDfs8	../mainOpenCv.py	/^graphicsDfs8 = Graphics(g)$/;"	kind:variable	line:107
+graphicsSunshine	../mainOpenCv.py	/^graphicsSunshine = Graphics(g)$/;"	kind:variable	line:85
 graphis	../espiral-competa.py	/^graphis = Graphics(b)$/;"	kind:variable	line:42
+i	../main.py	/^        i = raw_input("Entrar nuevo obstaculo, separados por coma: ")$/;"	kind:variable	line:34
+i	../main.py	/^i = 0$/;"	kind:variable	line:60
+i	../main.py	/^i = 0$/;"	kind:variable	line:62
+i	../mainOpenCv.py	/^        i = raw_input("Entrar nuevo obstaculo, separados por coma: ")$/;"	kind:variable	line:26
+i	../mainOpenCv.py	/^i = 0$/;"	kind:variable	line:100
+i	../mainOpenCv.py	/^i = 0$/;"	kind:variable	line:128
+i	../mainOpenCv.py	/^i = 0$/;"	kind:variable	line:51
+i	../mainOpenCv.py	/^i = 0$/;"	kind:variable	line:77
 img	../OpenCV.py	/^img = cv2.imread(src)$/;"	kind:variable	line:23
-inicio	../main.py	/^inicio = raw_input("Defina la posicion de inicion, separando las posiciones con ',': ")$/;"	kind:variable	line:26
-inicio	../mainOpenCv.py	/^inicio = (int(inicio.split(",")[0]),int(inicio.split(",")[1]))$/;"	kind:variable	line:31
-inicio	../mainOpenCv.py	/^inicio = raw_input("Defina la posicion de inicion, separando las posiciones con ',': ")$/;"	kind:variable	line:29
+inicio	../main.py	/^inicio = (int(inicio.split(",")[0]),int(inicio.split(",")[1]))$/;"	kind:variable	line:44
+inicio	../main.py	/^inicio = raw_input("Defina la posicion de inicion, separando las posiciones con ',': ")$/;"	kind:variable	line:42
+inicio	../mainOpenCv.py	/^inicio = (int(inicio.split(",")[0]),int(inicio.split(",")[1]))$/;"	kind:variable	line:43
+inicio	../mainOpenCv.py	/^inicio = raw_input("Defina la posicion de inicion, separando las posiciones con ',': ")$/;"	kind:variable	line:41
 inicio	../mainStc.py	/^inicio = raw_input("Defina la posicion de inicion, separando las posiciones con ',': ")$/;"	kind:variable	line:15
 initial1x1	../STC.py	/^    initial1x1 = 0$/;"	kind:variable	line:11
 initial4x4	../STC.py	/^    initial4x4 = 0$/;"	kind:variable	line:12
-isCurrenPositionSeed	../DFS.py	/^        def isCurrenPositionSeed(self,i,j):$/;"	kind:member	line:42
+isCurrenPositionSeed	../DFS.py	/^        def isCurrenPositionSeed(self,i,j):$/;"	kind:member	line:43
 isCurrenPositionSeed	../DFS8.py	/^        def isCurrenPositionSeed(self,i,j):$/;"	kind:member	line:48
 isMatrixEmpty	../waveFront.py	/^    def isMatrixEmpty(self):$/;"	kind:member	line:19
 isValidBox	../waveFront.py	/^    def isValidBox(self,i,j):$/;"	kind:member	line:64
-left	../Graphics.py	/^    left = 2 $/;"	kind:variable	line:10
+left	../Graphics.py	/^    left = 7$/;"	kind:variable	line:15
 left	../STC.py	/^    left = 1$/;"	kind:variable	line:14
 left	../Sunshine.py	/^    left = 1$/;"	kind:variable	line:7
 lugareConPeso	../Sunshine.py	/^    lugareConPeso = []$/;"	kind:variable	line:17
@@ -213,12 +247,13 @@ mainStc.py	../mainStc.py	1;"	kind:file	line:1
 mainSunshine.py	../mainSunshine.py	1;"	kind:file	line:1
 mapa	../espiral-competa.py	/^mapa = np.zeros((hm,gm))$/;"	kind:variable	line:23
 math	../OpenCV.py	/^import math$/;"	kind:namespace	line:4
-math	../mainOpenCv.py	/^import math$/;"	kind:namespace	line:11
+math	../main.py	/^import math$/;"	kind:namespace	line:12
+math	../mainOpenCv.py	/^import math$/;"	kind:namespace	line:12
 math	../openCvscritps.py	/^import math$/;"	kind:namespace	line:3
 matricesVacias	../Espiral.py	/^from matricesVacias import matricesVacias$/;"	kind:namespace	line:3
 matricesVacias	../OpenCV.py	/^from matricesVacias import matricesVacias$/;"	kind:namespace	line:5
 matricesVacias	../espiral-competa.py	/^from matricesVacias import matricesVacias$/;"	kind:namespace	line:3
-matricesVacias	../main.py	/^from matricesVacias import matricesVacias$/;"	kind:namespace	line:3
+matricesVacias	../main.py	/^from matricesVacias import matricesVacias$/;"	kind:namespace	line:6
 matricesVacias	../mainOpenCv.py	/^from matricesVacias import matricesVacias$/;"	kind:namespace	line:6
 matricesVacias	../mainStc.py	/^from matricesVacias import matricesVacias$/;"	kind:namespace	line:2
 matricesVacias	../mainSunshine.py	/^from matricesVacias import matricesVacias$/;"	kind:namespace	line:2
@@ -228,7 +263,7 @@ matricesVacias.py	../matricesVacias.py	1;"	kind:file	line:1
 matrisVacia	../mainStc.py	/^matrisVacia = matricesVacias(filas,columnas)$/;"	kind:variable	line:11
 matrisVacia	../mainSunshine.py	/^matrisVacia = matricesVacias(filas,columnas)$/;"	kind:variable	line:13
 matrix	../waveFront.py	/^    matrix = 0$/;"	kind:variable	line:10
-matriz	../DFS.py	/^        matriz = 0$/;"	kind:variable	line:17
+matriz	../DFS.py	/^        matriz = 0$/;"	kind:variable	line:18
 matriz	../DFS8.py	/^        matriz = []$/;"	kind:variable	line:17
 matriz	../Graphics.py	/^    matriz = 0$/;"	kind:variable	line:8
 matriz	../Sunshine.py	/^    matriz = []$/;"	kind:variable	line:13
@@ -236,31 +271,37 @@ matriz1x1	../STC.py	/^    matriz1x1 = 0$/;"	kind:variable	line:6
 matriz4x4	../STC.py	/^    matriz4x4 = 0 $/;"	kind:variable	line:5
 matrizBasica	../matricesVacias.py	/^    def matrizBasica(self):$/;"	kind:member	line:9
 matrizConObstaculos	../matricesVacias.py	/^    def matrizConObstaculos(self):$/;"	kind:member	line:12
-matrizFin	../mainOpenCv.py	/^matrizFin = matrizVacia.defineFin(fin,matrizFromImageForDfs)$/;"	kind:variable	line:87
+matrizFin	../main.py	/^matrizFin = matrizVacia.defineFin(fin,matrizFromImageForDfs)$/;"	kind:variable	line:52
+matrizFin	../mainOpenCv.py	/^matrizFin = matrizVacia.defineFin(fin,matrizFromImageForDfs)$/;"	kind:variable	line:120
 matrizForStc	../matricesVacias.py	/^    def matrizForStc(self):$/;"	kind:member	line:30
 matrizForSunshine	../matricesVacias.py	/^    def matrizForSunshine(self):$/;"	kind:member	line:37
-matrizFromImage	../mainOpenCv.py	/^matrizFromImage = openCvScript.getMatrizFromImage()$/;"	kind:variable	line:25
-matrizFromImageForDfs	../mainOpenCv.py	/^matrizFromImageForDfs = openCvScript.getMatrizFromImage()$/;"	kind:variable	line:84
-matrizFromImageForDfs8	../mainOpenCv.py	/^matrizFromImageForDfs8 = openCvScript.getMatrizFromImage()$/;"	kind:variable	line:68
-matrizFromImageForSunshine	../mainOpenCv.py	/^matrizFromImageForSunshine = openCvScript.getMatrizFromImage()$/;"	kind:variable	line:50
-matrizInicio	../mainOpenCv.py	/^matrizInicio = matrizVacia.defineOrigin(inicio,matrizFromImage)$/;"	kind:variable	line:35
+matrizFromImage	../main.py	/^matrizFromImage = openCvScript.getMatrizFromImage()$/;"	kind:variable	line:31
+matrizFromImage	../mainOpenCv.py	/^matrizFromImage = openCvScript.getMatrizFromImage()$/;"	kind:variable	line:23
+matrizFromImageForDfs	../main.py	/^matrizFromImageForDfs = matrizFromImage$/;"	kind:variable	line:49
+matrizFromImageForDfs	../mainOpenCv.py	/^matrizFromImageForDfs = c2$/;"	kind:variable	line:117
+matrizFromImageForDfs8	../mainOpenCv.py	/^matrizFromImageForDfs8 = c1$/;"	kind:variable	line:94
+matrizFromImageForEspiral	../mainOpenCv.py	/^matrizFromImageForEspiral = c3$/;"	kind:variable	line:143
+matrizFromImageForSunshine	../mainOpenCv.py	/^matrizFromImageForSunshine = c$/;"	kind:variable	line:69
+matrizInicio	../mainOpenCv.py	/^matrizInicio = matrizVacia.defineOrigin(inicio,matrizFromImage)$/;"	kind:variable	line:47
 matrizInicio	../mainStc.py	/^matrizInicio = matrisVacia.defineOrigin(inicio,a)$/;"	kind:variable	line:16
-matrizInicioFin	../main.py	/^matrizInicioFin = x.definirOrigenFin(inicio,fin,a)$/;"	kind:variable	line:28
-matrizInicioFin	../mainOpenCv.py	/^matrizInicioFin = matrizVacia.definirOrigenFin(inicio,fin,matrizWithWaveFront)$/;"	kind:variable	line:91
+matrizInicioFin	../main.py	/^matrizInicioFin = matrizVacia.definirOrigenFin(inicio,fin,matrizWithWaveFront)$/;"	kind:variable	line:56
+matrizInicioFin	../mainOpenCv.py	/^matrizInicioFin = matrizVacia.definirOrigenFin(inicio,fin,matrizWithWaveFront)$/;"	kind:variable	line:124
 matrizSunshie	../Sunshine.py	/^    matrizSunshie = []$/;"	kind:variable	line:15
-matrizVacia	../mainOpenCv.py	/^matrizVacia = matricesVacias(0,0)$/;"	kind:variable	line:23
-matrizVacia	../mainOpenCv.py	/^matrizVacia = matricesVacias(0,0)$/;"	kind:variable	line:86
+matrizVacia	../main.py	/^matrizVacia = matricesVacias(0,0)$/;"	kind:variable	line:29
+matrizVacia	../main.py	/^matrizVacia = matricesVacias(0,0)$/;"	kind:variable	line:51
+matrizVacia	../mainOpenCv.py	/^matrizVacia = matricesVacias(0,0)$/;"	kind:variable	line:119
+matrizVacia	../mainOpenCv.py	/^matrizVacia = matricesVacias(0,0)$/;"	kind:variable	line:21
 matrizWaveFrontStart	../Sunshine.py	/^    matrizWaveFrontStart = []$/;"	kind:variable	line:14
-matrizWithWaveFront	../main.py	/^matrizWithWaveFront = wf.aplyWaveFrontToMatrix()$/;"	kind:variable	line:31
-matrizWithWaveFront	../mainOpenCv.py	/^matrizWithWaveFront = wf.aplyWaveFrontToMatrix()$/;"	kind:variable	line:90
+matrizWithWaveFront	../main.py	/^matrizWithWaveFront = wf.aplyWaveFrontToMatrix()$/;"	kind:variable	line:55
+matrizWithWaveFront	../mainOpenCv.py	/^matrizWithWaveFront = wf.aplyWaveFrontToMatrix()$/;"	kind:variable	line:123
 mv	../OpenCV.py	/^mv = matricesVacias(int(filas),columnas)$/;"	kind:variable	line:35
 mv	../espiral-competa.py	/^mv = matricesVacias(hm,gm)$/;"	kind:variable	line:24
-n	../DFS.py	/^        n = []$/;"	kind:variable	line:18
+n	../DFS.py	/^        n = []$/;"	kind:variable	line:19
 n	../DFS8.py	/^        n = []$/;"	kind:variable	line:18
 nextPosition1x1	../STC.py	/^    def nextPosition1x1(self,currentPosition,posibleCells):$/;"	kind:member	line:168
 nodes	../STC.py	/^    nodes = []$/;"	kind:variable	line:10
 nothing	../espiral-competa.py	/^nothing = 0$/;"	kind:variable	line:14
-np	../DFS.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../DFS.py	/^import numpy as np$/;"	kind:namespace	line:2
 np	../DFS8.py	/^import numpy as np$/;"	kind:namespace	line:1
 np	../Espiral.py	/^import numpy as np$/;"	kind:namespace	line:1
 np	../Graphics.py	/^import numpy as np$/;"	kind:namespace	line:1
@@ -268,39 +309,43 @@ np	../OpenCV.py	/^import numpy as np$/;"	kind:namespace	line:1
 np	../STC.py	/^import numpy as np$/;"	kind:namespace	line:1
 np	../Sunshine.py	/^import numpy as np$/;"	kind:namespace	line:1
 np	../espiral-competa.py	/^import numpy as np$/;"	kind:namespace	line:1
-np	../main.py	/^import numpy as np$/;"	kind:namespace	line:1
-np	../mainOpenCv.py	/^import numpy as np$/;"	kind:namespace	line:9
+np	../main.py	/^import numpy as np$/;"	kind:namespace	line:10
+np	../mainOpenCv.py	/^import numpy as np$/;"	kind:namespace	line:10
 np	../mainStc.py	/^import numpy as np$/;"	kind:namespace	line:1
 np	../mainSunshine.py	/^import numpy as np$/;"	kind:namespace	line:1
 np	../matricesVacias.py	/^import numpy as np$/;"	kind:namespace	line:1
 np	../openCvscritps.py	/^import numpy as np$/;"	kind:namespace	line:1
 np	../waveFront.py	/^import numpy as np$/;"	kind:namespace	line:1
-numberOfTwist	../Graphics.py	/^    def numberOfTwist(self,covertura):$/;"	kind:member	line:68
+numberOfTwist	../Graphics.py	/^    def numberOfTwist(self,covertura):$/;"	kind:member	line:69
 obstaculo	../espiral-competa.py	/^obstaculo = -1$/;"	kind:variable	line:13
-openCvScript	../mainOpenCv.py	/^openCvScript = openCvscritps(columnas,srcImage)$/;"	kind:variable	line:24
+obstaculo	../main.py	/^        obstaculo = map(lambda x: int(x),i.split(","))$/;"	kind:variable	line:37
+obstaculo	../mainOpenCv.py	/^        obstaculo = map(lambda x: int(x),i.split(","))$/;"	kind:variable	line:29
+openCvScript	../main.py	/^openCvScript = openCvscritps(columnas,srcImage)$/;"	kind:variable	line:30
+openCvScript	../mainOpenCv.py	/^openCvScript = openCvscritps(columnas,srcImage)$/;"	kind:variable	line:22
+openCvscritps	../main.py	/^from openCvscritps import openCvscritps$/;"	kind:namespace	line:1
 openCvscritps	../mainOpenCv.py	/^from openCvscritps import openCvscritps$/;"	kind:namespace	line:1
 openCvscritps	../openCvscritps.py	/^class openCvscritps:$/;"	kind:class	line:8
 openCvscritps.py	../openCvscritps.py	1;"	kind:file	line:1
-orientationOfWay	../Graphics.py	/^    def orientationOfWay(self,currentPosition,futurePosition):$/;"	kind:member	line:99
+orientationOfWay	../Graphics.py	/^    def orientationOfWay(self,currentPosition,futurePosition):$/;"	kind:member	line:105
 pi_x	../espiral-competa.py	/^pi_x = int(input())$/;"	kind:variable	line:38
 pi_y	../espiral-competa.py	/^pi_y = int(input())$/;"	kind:variable	line:39
 plt	../OpenCV.py	/^from matplotlib import pyplot as plt$/;"	kind:namespace	line:3
-printCovertura	../Graphics.py	/^    def printCovertura(self,covertura):$/;"	kind:member	line:24
-printCoverturaWithWavefront	../Graphics.py	/^    def printCoverturaWithWavefront(self,covertura):$/;"	kind:member	line:38
+printCovertura	../Graphics.py	/^    def printCovertura(self,covertura):$/;"	kind:member	line:28
+printCoverturaWithWavefront	../Graphics.py	/^    def printCoverturaWithWavefront(self,covertura):$/;"	kind:member	line:39
 printMessage	../Util/graphic.py	/^    def printMessage(self):$/;"	kind:member	line:3
 putWaveFrontInElement	../Sunshine.py	/^    def putWaveFrontInElement(self,valorDeComparacion,pos):$/;"	kind:member	line:86
 putWaveFrontInElementStart	../Sunshine.py	/^    def putWaveFrontInElementStart(self,valorDeComparacion,pos):$/;"	kind:member	line:143
 region	../OpenCV.py	/^        region = cv2.cvtColor(img[i*sizeOfRegion:(i+1)*sizeOfRegion,j*sizeOfRegion:(j+1)*sizeOfRegion],cv2.COLOR_BGR2GRAY)$/;"	kind:variable	line:39
 regions	../OpenCV.py	/^regions= []$/;"	kind:variable	line:21
-removeSeedInS	../DFS.py	/^        def removeSeedInS(self):$/;"	kind:member	line:132
+removeSeedInS	../DFS.py	/^        def removeSeedInS(self):$/;"	kind:member	line:133
 removeSeedInS	../DFS8.py	/^        def removeSeedInS(self):$/;"	kind:member	line:156
-rigth	../Graphics.py	/^    rigth = 4$/;"	kind:variable	line:12
+rigth	../Graphics.py	/^    rigth = 3$/;"	kind:variable	line:11
 rigth	../STC.py	/^    rigth = 3$/;"	kind:variable	line:16
 rigth	../Sunshine.py	/^    rigth = 3$/;"	kind:variable	line:9
-rows	../DFS.py	/^        rows = 0$/;"	kind:variable	line:22
+rows	../DFS.py	/^        rows = 0$/;"	kind:variable	line:23
 rows	../DFS8.py	/^        rows = 0$/;"	kind:variable	line:22
 rows	../waveFront.py	/^    rows = 0$/;"	kind:variable	line:11
-s	../DFS.py	/^        s = []$/;"	kind:variable	line:20
+s	../DFS.py	/^        s = []$/;"	kind:variable	line:21
 s	../DFS8.py	/^        s = []$/;"	kind:variable	line:20
 searchForNextBorder	../STC.py	/^    def searchForNextBorder(self,currentPosition,currentNode,parentNode):$/;"	kind:member	line:106
 setLugaresDisponibles	../Sunshine.py	/^    def setLugaresDisponibles(self):$/;"	kind:member	line:200
@@ -310,21 +355,24 @@ sizeOfRegion	../OpenCV.py	/^sizeOfRegion = img.shape[1]\/columnas$/;"	kind:varia
 sizeOfRegion	../openCvscritps.py	/^    sizeOfRegion = 0$/;"	kind:variable	line:14
 src	../OpenCV.py	/^src = 'cdu_geo.tif'$/;"	kind:variable	line:22
 src	../openCvscritps.py	/^    src = ""$/;"	kind:variable	line:13
-srcImage	../mainOpenCv.py	/^srcImage = 'cdu_geo2.tif'$/;"	kind:variable	line:18
-static	../Graphics.py	/^    static = 5$/;"	kind:variable	line:13
-stc	../mainOpenCv.py	/^stc = STC(matrizInicio)$/;"	kind:variable	line:38
+srcImage	../main.py	/^srcImage = 'cdu_image.tif'$/;"	kind:variable	line:26
+srcImage	../mainOpenCv.py	/^srcImage = 'cdu_image.tif'$/;"	kind:variable	line:18
+static	../Graphics.py	/^    static = 9$/;"	kind:variable	line:17
+stc	../mainOpenCv.py	/^stc = STC(matrizInicio)$/;"	kind:variable	line:49
 stc	../mainStc.py	/^stc = STC(matrizInicio)$/;"	kind:variable	line:18
 sunshie	../mainSunshine.py	/^sunshie = Sunshine(a)$/;"	kind:variable	line:17
-sunshine	../mainOpenCv.py	/^sunshine = Sunshine(matrizFromImageForSunshine)$/;"	kind:variable	line:52
-sunshineDfs8	../mainOpenCv.py	/^sunshineDfs8 = Sunshine(matrizFromImageForDfs8)$/;"	kind:variable	line:70
+sunshine	../mainOpenCv.py	/^sunshine = Sunshine(matrizFromImageForSunshine)$/;"	kind:variable	line:71
+sunshineDfs8	../mainOpenCv.py	/^sunshineDfs8 = Sunshine(matrizFromImageForDfs8)$/;"	kind:variable	line:96
 time	../Graphics.py	/^import time as time$/;"	kind:namespace	line:2
 time	../Sunshine.py	/^import time as time$/;"	kind:namespace	line:2
 time	../mainSunshine.py	/^import time as time$/;"	kind:namespace	line:5
 time	../openCvscritps.py	/^import time$/;"	kind:namespace	line:4
-up	../Graphics.py	/^    up = 3$/;"	kind:variable	line:11
+up	../Graphics.py	/^    up = 1$/;"	kind:variable	line:9
 up	../STC.py	/^    up = 0$/;"	kind:variable	line:13
 up	../Sunshine.py	/^    up = 0$/;"	kind:variable	line:6
-v	../DFS.py	/^        v = []$/;"	kind:variable	line:19
+upLeft	../Graphics.py	/^    upLeft = 8$/;"	kind:variable	line:16
+upRigth	../Graphics.py	/^    upRigth = 2$/;"	kind:variable	line:10
+v	../DFS.py	/^        v = []$/;"	kind:variable	line:20
 v	../DFS8.py	/^        v = []$/;"	kind:variable	line:19
 vectorN	../STC.py	/^    vectorN = []$/;"	kind:variable	line:8
 vectorS	../STC.py	/^    vectorS = []$/;"	kind:variable	line:7
@@ -332,12 +380,12 @@ vectorV	../STC.py	/^    vectorV = []$/;"	kind:variable	line:9
 visitado	../espiral-competa.py	/^visitado = 1$/;"	kind:variable	line:12
 visitados	../espiral-competa.py	/^visitados = []$/;"	kind:variable	line:17
 waveFront.py	../waveFront.py	1;"	kind:file	line:1
-wf	../main.py	/^wf = WaveFront(matrizInicioFin,filas,columnas)$/;"	kind:variable	line:30
-wf	../mainOpenCv.py	/^wf = WaveFront(matrizFin,filas,columnas)$/;"	kind:variable	line:89
-writer	../main.py	/^    writer = csv.writer(f)$/;"	kind:variable	line:42
-writer	../mainOpenCv.py	/^        writer = csv.writer(f)$/;"	kind:variable	line:100
-writer	../mainOpenCv.py	/^        writer = csv.writer(f)$/;"	kind:variable	line:46
+wf	../main.py	/^wf = WaveFront(matrizFin,filas,columnas)$/;"	kind:variable	line:54
+wf	../mainOpenCv.py	/^wf = WaveFront(matrizFin,filas,columnas)$/;"	kind:variable	line:122
+writer	../main.py	/^        writer = csv.writer(f)$/;"	kind:variable	line:77
+writer	../mainOpenCv.py	/^        writer = csv.writer(f)$/;"	kind:variable	line:113
+writer	../mainOpenCv.py	/^        writer = csv.writer(f)$/;"	kind:variable	line:140
+writer	../mainOpenCv.py	/^        writer = csv.writer(f)$/;"	kind:variable	line:152
 writer	../mainOpenCv.py	/^        writer = csv.writer(f)$/;"	kind:variable	line:65
-writer	../mainOpenCv.py	/^        writer = csv.writer(f)$/;"	kind:variable	line:80
+writer	../mainOpenCv.py	/^        writer = csv.writer(f)$/;"	kind:variable	line:91
 x	../OpenCV.py	/^x = mv.matrizBasica()$/;"	kind:variable	line:36
-x	../main.py	/^x = matricesVacias(columnas,filas)$/;"	kind:variable	line:22
