@@ -50,7 +50,14 @@ class openCvscritps:
                     matriz[i,j] = -1
         print(matriz)
         cv2.imshow('region',cv2.cvtColor(img,cv2.COLOR_BGR2GRAY))
-        cv2.destroyAllWindows
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+
+        region2 = cv2.cvtColor(img[80:402,239:563],cv2.COLOR_BGR2GRAY)
+        cv2.imshow('region2',region2)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+        #cv2.destroyAllWindows
         return matriz
     
     def getFilasFromImage(self):

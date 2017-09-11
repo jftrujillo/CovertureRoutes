@@ -214,6 +214,7 @@ class DFS:
             currentPosition = self.findStartAndGoal()[0]
             parentVector = []
             covertura =  []
+            covertura.append(currentPosition)
             self.getVectorN()
             while (len(self.v) < (len(self.n) - 1)):
                 self.addVisitedPosition(currentPosition)

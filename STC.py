@@ -32,6 +32,7 @@ class STC:
         self.setVectorN()
         vectorS = []
         covertura = []
+        covertura.append(self.currentPosition)
 
         while (len(self.vectorV) < (len(self.vectorN))):
             positionNode = self.getNewNodeArround(self.currentPosition,self.currentNode,parentNode)

@@ -12,6 +12,7 @@ import cv2 as cv2
 import math
 import copy
 import csv
+import pickle
 
 
 print("imagenes reoferencias con algoritmos de busqueda")
@@ -22,14 +23,36 @@ matrizVacia = matricesVacias(0,0)
 openCvScript = openCvscritps(columnas,srcImage)
 matrizFromImage = openCvScript.getMatrizFromImage()
 filas = openCvScript.getFilasFromImage()
-while True:
-        i = raw_input("Entrar nuevo obstaculo, separados por coma: ")
-        if not i:
-                break
-        obstaculo = map(lambda x: int(x),i.split(","))
-        matrizFromImage[obstaculo[0]][obstaculo[1]] = -1
-        print(obstaculo)
+offline = raw_input("Generar nueva matriz?, s para si ")
+if offline == "s":
+        while True:
+                i = raw_input("Entrar cambio de estado en , separados por coma: ")
+                if not i:
+                        break
+                obstaculo = map(lambda x: int(x),i.split(","))
+                if matrizFromImage[obstaculo[0]][obstaculo[1]] == -1:
+                        matrizFromImage[obstaculo[0]][obstaculo[1]] = 0
+                else:
+                        matrizFromImage[obstaculo[0]][obstaculo[1]] = -1            
+                print(obstaculo)
+                print(matrizFromImage)
+        if raw_input("Desea guardar?, s para si ") == "s":
+                nombre = (raw_input("Nombre de la matriz"))
+                with open(nombre,"wb") as output:
+                        pickle.dump(matrizFromImage,output,pickle.HIGHEST_PROTOCOL)
+else:
+    nombreArchivo = raw_input("Nombre del archivo con la matriz guardad")
+    while True:
+        with open (nombreArchivo,"rb") as input:
+                matrizFromImage = pickle.load(input)
         print(matrizFromImage)
+        save = raw_input("Es esta su matriz, s para si")
+        if save == "s":
+                break
+        
+
+                
+        
 
 
 b = copy.deepcopy(matrizFromImage)

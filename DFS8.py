@@ -216,6 +216,7 @@ class DFS8:
             currentPosition = self.findStartAndGoal()[0]
             parentVector = []
             covertura =  []
+            covertura.append(currentPosition)
             self.getVectorN()
             while (len(self.v) < (len(self.n) - 1)):
                 self.addVisitedPosition(currentPosition)
@@ -228,8 +229,7 @@ class DFS8:
                     print(nextPosition)
                     covertura.append(nextPosition)
                     currentPosition = nextPosition                    
-
-                
+                                            
                 else:
                     #no es una semilla
                     if (len(self.getVectorA(currentPosition[0],currentPosition[1])) == 0):
