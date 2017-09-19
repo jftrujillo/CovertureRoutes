@@ -201,6 +201,8 @@ class STC:
         print(str(colums / 2) + " " + str(rows / 2))
         matriz1x1 = np.zeros((rows / 2,colums / 2))
         seedRows = range(0,rows)
+        if colums % 2 != 0:
+            colums = colums -1
         seedColumns = range(0,colums)
         seeds = (list((x,y) for x in seedRows if (x % 2 == 0) for y in seedColumns if (y % 2 == 0)))
         print(matriz1x1)
@@ -211,7 +213,10 @@ class STC:
             matriz1x1[x,y] = self.getNode1x1State(seeds[index])
             if (self.getNode1x1State(seeds[index]) == -1):
                 for element in self.getNode4x4(seeds[index]):
-                    self.matriz4x4[element[0],element[1]] = -1
+                    try:
+                        self.matriz4x4[element[0],element[1]] = -1
+                    except:
+                        pass
             index = index + 1
         print(self.nodes)
         print(matriz1x1)

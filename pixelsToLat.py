@@ -1,6 +1,6 @@
 from osgeo import gdal
 import csv
-ds = gdal.Open('cdu_image.tif')
+ds = gdal.Open('cafe_modificado2.tif')
 
 # unravel GDAL affine transform parameters
 c, a, b, f, d, e = ds.GetGeoTransform()

@@ -16,7 +16,7 @@ import pickle
 
 
 print("imagenes reoferencias con algoritmos de busqueda")
-srcImage = 'cdu_image.tif'
+srcImage = 'cafe_modificado2.tif'
 columnas = int(raw_input("ingrese el numero de columnas "))
 
 matrizVacia = matricesVacias(0,0)
@@ -41,7 +41,7 @@ if offline == "s":
                 with open(nombre,"wb") as output:
                         pickle.dump(matrizFromImage,output,pickle.HIGHEST_PROTOCOL)
 else:
-    nombreArchivo = raw_input("Nombre del archivo con la matriz guardad")
+    nombreArchivo = raw_input("Nombre del archivo con la matriz guardada")
     while True:
         with open (nombreArchivo,"rb") as input:
                 matrizFromImage = pickle.load(input)
