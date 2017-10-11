@@ -29,7 +29,10 @@ class Espiral:
         print("aqui")
         while any (nothing in arr for arr in a):
             if len(panterior) == 1:
-                psiguiente = np.matrix([[pi_x],[pi_y +1]])
+                if gm - 1 > pi_y:
+                    psiguiente = np.matrix([[pi_x],[pi_y +1]])
+                else:
+                    psiguiente = np.matrix([[pi_x],[pi_y-1]])
             else:
                 r = pactual - panterior
                 ##print(r)

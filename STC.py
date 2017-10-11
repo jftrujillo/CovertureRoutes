@@ -201,8 +201,8 @@ class STC:
         print(str(colums / 2) + " " + str(rows / 2))
         matriz1x1 = np.zeros((rows / 2,colums / 2))
         seedRows = range(0,rows)
-        if colums % 2 != 0:
-            colums = colums -1
+        #if colums % 2 != 0:
+        #   colums = colums -1
         seedColumns = range(0,colums)
         seeds = (list((x,y) for x in seedRows if (x % 2 == 0) for y in seedColumns if (y % 2 == 0)))
         print(matriz1x1)

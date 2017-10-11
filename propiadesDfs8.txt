@@ -1,1 +1,1 @@
-visitas: 31 re visitas : 2.0 giros 45 grados : 7 , 90 grados : 8 , 135 grados : 5 , 180 grados 1
+visitas: 57 re visitas : 0 giros 45 grados : 14 , 90 grados : 9 , 135 grados : 14 , 180 grados 0

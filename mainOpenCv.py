@@ -16,7 +16,7 @@ import pickle
 
 
 print("imagenes reoferencias con algoritmos de busqueda")
-srcImage = 'cafe_modificado2.tif'
+srcImage = 'comple_modificado.tif'
 columnas = int(raw_input("ingrese el numero de columnas "))
 
 matrizVacia = matricesVacias(0,0)
